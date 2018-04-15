@@ -1,0 +1,60 @@
+/*======= Contact Styles =======*/
+.contact .contact__title h4 {
+  margin-top: -5px; }
+.contact .contact__sidebar {
+  padding-top: 62px;
+  padding-bottom: 60px;
+  padding-left: 35px;
+  padding-right: 40px;
+  background: #fafafa; }
+  .contact .contact__sidebar p {
+    color: #adadad;
+    margin-bottom: 0; }
+  .contact .contact__sidebar a, .contact .contact__sidebar p a {
+    color: #adadad; }
+    .contact .contact__sidebar a:hover, .contact .contact__sidebar p a:hover {
+      color: #44c3cf; }
+  .contact .contact__sidebar .contact__title p {
+    color: #606060; }
+  .contact .contact__sidebar .contact__sidebar__body {
+    padding-top: 10px; }
+    .contact .contact__sidebar .contact__sidebar__body > div {
+      padding: 18px 0;
+      margin-right: 60px;
+      border-bottom: 1px solid #e8e8e8; }
+      .contact .contact__sidebar .contact__sidebar__body > div:last-child {
+        border-bottom: none; }
+  .contact .contact__sidebar .contact__social {
+    margin-top: 15px; }
+    .contact .contact__sidebar .contact__social h5 {
+      font-size: 15px;
+      color: #6b6b6b; }
+.contact .contact__form {
+  padding-left: 30px; }
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .contact .contact__sidebar {
+    margin-top: 0;
+    padding-left: 0; }
+  .contact .contact__form {
+    margin-top: 80px;
+    padding-left: 0; } }
+@media only screen and (max-width: 767px) {
+  .contact .contact__sidebar {
+    margin-top: 0;
+    padding-left: 0; }
+  .contact .contact__form {
+    margin-top: 80px;
+    padding-left: 0; } }
+@media only screen and (max-width: 575px) {
+  .contact .contact__sidebar {
+    margin-top: 0;
+    padding-left: 0;
+    padding-right: 0; }
+    .contact .contact__sidebar .contact__sidebar__body > div {
+      margin-right: 0; }
+  .contact .contact__form {
+    margin-top: 80px;
+    padding-left: 0; } }
+
+/*# sourceMappingURL=contact.css.map */

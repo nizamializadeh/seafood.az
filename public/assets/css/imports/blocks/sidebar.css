@@ -1,0 +1,211 @@
+/*======= Sidebar Styles =======*/
+.widgets {
+  padding-left: 40px;
+  padding-right: 30px;
+  padding-bottom: 45px;
+  background: #fafafa; }
+  .widgets h4.widget-title {
+    font-size: 17px;
+    line-height: 24px;
+    color: #3c3c3c;
+    position: relative;
+    padding-bottom: 5px;
+    margin-bottom: 27px; }
+    .widgets h4.widget-title:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 1px;
+      width: 50px;
+      background: #3c3c3c; }
+  .widgets .single-widget {
+    padding-top: 47px; }
+    .widgets .single-widget.sb-categories ul li {
+      margin: 11px 0; }
+      .widgets .single-widget.sb-categories ul li a {
+        font-size: 14px;
+        line-height: 24px;
+        color: #858585;
+        font-weight: 500;
+        font-family: "Hind", sans-serif;
+        letter-spacing: 0.5px; }
+        .widgets .single-widget.sb-categories ul li a:hover {
+          color: #44c3cf; }
+    .widgets .single-widget.sb-morepost ul {
+      padding-right: 20px; }
+      .widgets .single-widget.sb-morepost ul li {
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0.5px;
+        font-weight: 500;
+        margin: 18px 0; }
+        .widgets .single-widget.sb-morepost ul li a {
+          color: #44c3cf; }
+          .widgets .single-widget.sb-morepost ul li a:hover {
+            text-decoration: underline; }
+        .widgets .single-widget.sb-morepost ul li p {
+          color: #858585;
+          margin-bottom: 0; }
+    .widgets .single-widget.sb-price-range p {
+      text-align: center; }
+      .widgets .single-widget.sb-price-range p input {
+        padding: 0;
+        color: #858585;
+        font-size: 14px;
+        line-height: 24px;
+        font-weight: 500;
+        border: none;
+        letter-spacing: 0.5px;
+        background: transparent; }
+        .widgets .single-widget.sb-price-range p input:hover, .widgets .single-widget.sb-price-range p input:active, .widgets .single-widget.sb-price-range p input:focus {
+          border: none;
+          outline: none; }
+    .widgets .single-widget.sb-tags ul {
+      margin-left: -5px;
+      margin-right: -5px; }
+      .widgets .single-widget.sb-tags ul li {
+        margin: 7px 4px;
+        display: inline-block; }
+        .widgets .single-widget.sb-tags ul li a {
+          display: inline-block;
+          height: 30px;
+          line-height: 30px;
+          padding: 0 16px;
+          color: #858585;
+          letter-spacing: 0.5px;
+          font-weight: 500;
+          font-size: 13px;
+          border: 1px solid #d7d7d7;
+          -webkit-border-radius: 100px;
+          -moz-border-radius: 100px;
+          -ms-border-radius: 100px;
+          -o-border-radius: 100px;
+          border-radius: 100px; }
+          .widgets .single-widget.sb-tags ul li a:hover {
+            background: #44c3cf;
+            color: #ffffff;
+            border-color: #44c3cf; }
+    .widgets .single-widget.sb-twitter-feed ul li {
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      margin-bottom: 20px; }
+      .widgets .single-widget.sb-twitter-feed ul li:last-child {
+        margin-bottom: 0; }
+      .widgets .single-widget.sb-twitter-feed ul li a {
+        display: inline;
+        color: #44c3cf; }
+        .widgets .single-widget.sb-twitter-feed ul li a:hover {
+          text-decoration: underline; }
+        .widgets .single-widget.sb-twitter-feed ul li a.time {
+          display: block;
+          color: #858585; }
+          .widgets .single-widget.sb-twitter-feed ul li a.time:hover {
+            color: #44c3cf;
+            text-decoration: none; }
+      .widgets .single-widget.sb-twitter-feed ul li p {
+        display: inline;
+        color: #858585; }
+    .widgets .single-widget.sb-instagram ul {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-wrap: wrap;
+      -moz-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      -webkit-justify-content: space-between;
+      -moz-justify-content: space-between;
+      justify-content: space-between; }
+      .widgets .single-widget.sb-instagram ul li {
+        margin-top: 4px; }
+        .widgets .single-widget.sb-instagram ul li a {
+          position: relative;
+          display: inline-block; }
+          .widgets .single-widget.sb-instagram ul li a:before, .widgets .single-widget.sb-instagram ul li a:after {
+            position: absolute;
+            visibility: hidden;
+            opacity: 0;
+            -webkit-transition: all 0.3s ease-in-out 0s;
+            -moz-transition: all 0.3s ease-in-out 0s;
+            -ms-transition: all 0.3s ease-in-out 0s;
+            -o-transition: all 0.3s ease-in-out 0s;
+            transition: all 0.3s ease-in-out 0s; }
+          .widgets .single-widget.sb-instagram ul li a:before {
+            content: "";
+            height: 100%;
+            width: 100%;
+            left: 0;
+            top: 0;
+            position: absolute;
+            background: #44c3cf; }
+          .widgets .single-widget.sb-instagram ul li a:after {
+            content: "\f0c1";
+            font-family: fontAwesome;
+            left: 50%;
+            top: 50%;
+            position: absolute;
+            color: #ffffff;
+            text-align: center;
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            margin-top: 10px; }
+          .widgets .single-widget.sb-instagram ul li a:hover:before, .widgets .single-widget.sb-instagram ul li a:hover:after {
+            visibility: visible; }
+          .widgets .single-widget.sb-instagram ul li a:hover:before {
+            opacity: 0.8; }
+          .widgets .single-widget.sb-instagram ul li a:hover:after {
+            opacity: 1;
+            margin-top: 0; }
+
+.sidebar.blog-sidebar {
+  margin-right: 45px;
+  padding-right: 55px; }
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .sidebar.blog-sidebar {
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-right: 0; } }
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .widgets {
+    padding-left: 30px;
+    padding-right: 30px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+    .widgets .single-widget {
+      width: 50%; }
+
+  .sidebar.blog-sidebar {
+    padding-right: 30px;
+    margin-right: 0; }
+    .sidebar.blog-sidebar .single-widget {
+      padding-right: 30px; } }
+@media only screen and (max-width: 767px) {
+  .widgets {
+    padding-left: 30px; }
+
+  .sidebar.blog-sidebar {
+    margin-right: 0;
+    padding-left: 30px;
+    padding-right: 30px; }
+    .sidebar.blog-sidebar .single-widget {
+      padding-right: 0; } }
+
+/*# sourceMappingURL=sidebar.css.map */

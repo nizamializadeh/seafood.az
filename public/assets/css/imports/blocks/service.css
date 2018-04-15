@@ -1,0 +1,261 @@
+/*======= Service Styles =======*/
+.service {
+  margin-top: 30px;
+  position: relative; }
+  .service > div {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden; }
+  .service .service__frontside {
+    position: relative;
+    z-index: 1;
+    -webkit-transform: rotateY(0deg) perspective(400px);
+    -moz-transform: rotateY(0deg) perspective(400px);
+    -ms-transform: rotateY(0deg) perspective(400px);
+    -o-transform: rotateY(0deg) perspective(400px);
+    transform: rotateY(0deg) perspective(400px);
+    -webkit-transition: all 0.5s ease-in-out 0s;
+    -moz-transition: all 0.5s ease-in-out 0s;
+    -ms-transition: all 0.5s ease-in-out 0s;
+    -o-transition: all 0.5s ease-in-out 0s;
+    transition: all 0.5s ease-in-out 0s; }
+    .service .service__frontside .service__thumb {
+      width: 100%;
+      height: auto; }
+      .service .service__frontside .service__thumb img {
+        width: 100%;
+        height: auto; }
+    .service .service__frontside .service__content {
+      padding: 5px 30px;
+      position: absolute;
+      z-index: 3;
+      left: 0;
+      bottom: 0;
+      height: 100%;
+      width: 100%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: end;
+      -ms-flex-align: end;
+      -webkit-align-items: flex-end;
+      -moz-align-items: flex-end;
+      align-items: flex-end; }
+      .service .service__frontside .service__content span.service__content__icon {
+        height: 60px;
+        width: 60px;
+        display: inline-block;
+        background: #44c3cf;
+        -webkit-border-radius: 100%;
+        -moz-border-radius: 100%;
+        -ms-border-radius: 100%;
+        -o-border-radius: 100%;
+        border-radius: 100%;
+        text-align: center;
+        line-height: 60px;
+        margin-bottom: 10px; }
+      .service .service__frontside .service__content h3 {
+        color: #ffffff; }
+        .service .service__frontside .service__content h3 a {
+          color: #ffffff; }
+          .service .service__frontside .service__content h3 a:hover {
+            color: #44c3cf; }
+  .service .service__backside {
+    padding: 20px 20px;
+    background: #44c3cf;
+    background-color: #44c3cf;
+    -webkit-transform: rotateY(180deg) perspective(400px);
+    -moz-transform: rotateY(180deg) perspective(400px);
+    -ms-transform: rotateY(180deg) perspective(400px);
+    -o-transform: rotateY(180deg) perspective(400px);
+    transform: rotateY(180deg) perspective(400px);
+    -webkit-transition: all 0.5s ease-in-out 0s;
+    -moz-transition: all 0.5s ease-in-out 0s;
+    -ms-transition: all 0.5s ease-in-out 0s;
+    -o-transition: all 0.5s ease-in-out 0s;
+    transition: all 0.5s ease-in-out 0s;
+    text-align: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center; }
+    .service .service__backside span.service__content__icon {
+      height: 60px;
+      width: 60px;
+      display: inline-block;
+      background: #44c3cf;
+      -webkit-border-radius: 100%;
+      -moz-border-radius: 100%;
+      -ms-border-radius: 100%;
+      -o-border-radius: 100%;
+      border-radius: 100%;
+      text-align: center;
+      line-height: 60px;
+      margin-bottom: 10px;
+      border: 1px solid #ffffff;
+      margin-bottom: 15px; }
+    .service .service__backside p {
+      color: #ffffff;
+      margin-bottom: 10px; }
+    .service .service__backside a.cr-read-more {
+      color: #ffffff; }
+  .service:hover .service__frontside {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg); }
+  .service:hover .service__backside {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    transform: rotateY(0deg); }
+
+.hex-services {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+  margin-top: 20px; }
+  .hex-services .hex-service {
+    margin-top: 50px;
+    position: relative; }
+    .hex-services .hex-service .hexagon {
+      width: 218px;
+      height: 254px;
+      overflow: hidden;
+      visibility: hidden;
+      transform: rotate(120deg);
+      display: inline-block;
+      list-style-type: none; }
+      .hex-services .hex-service .hexagon .hexagon__inner1 {
+        display: block;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        transform: rotate(-60deg);
+        text-decoration: none; }
+        .hex-services .hex-service .hexagon .hexagon__inner1 .hexagon__inner2 {
+          display: block;
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          visibility: visible;
+          color: #fff;
+          text-shadow: 1px 1px #000;
+          transform: rotate(-60deg); }
+    .hex-services .hex-service .hexagon__content:before {
+      z-index: 3; }
+    .hex-services .hex-service .hexagon__content img.hex-border {
+      position: absolute;
+      z-index: 4;
+      left: 20px;
+      top: 25px;
+      width: 82% !important;
+      height: 76% !important; }
+    .hex-services .hex-service .hexagon__content img {
+      width: 100%;
+      height: auto;
+      -webkit-transition: all 0.3s ease-in-out 0s;
+      -moz-transition: all 0.3s ease-in-out 0s;
+      -ms-transition: all 0.3s ease-in-out 0s;
+      -o-transition: all 0.3s ease-in-out 0s;
+      transition: all 0.3s ease-in-out 0s; }
+    .hex-services .hex-service .hexagon__content h4 {
+      padding: 30px;
+      z-index: 4;
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      transform: translateY(-50%);
+      font-size: 24px;
+      line-height: 30px;
+      text-align: center; }
+      .hex-services .hex-service .hexagon__content h4 a {
+        color: #ffffff; }
+        .hex-services .hex-service .hexagon__content h4 a:hover {
+          color: #44c3cf; }
+    .hex-services .hex-service .hex-service__icon {
+      position: absolute;
+      height: 90px;
+      width: 90px;
+      line-height: 90px;
+      display: inline-block;
+      background: #44c3cf;
+      margin-left: -45px;
+      margin-top: -30px;
+      text-align: center;
+      left: 50%;
+      top: 0;
+      overflow: hidden;
+      -webkit-border-radius: 100%;
+      -moz-border-radius: 100%;
+      -ms-border-radius: 100%;
+      -o-border-radius: 100%;
+      border-radius: 100%;
+      -webkit-transition: all 0.3s ease-in-out 0s;
+      -moz-transition: all 0.3s ease-in-out 0s;
+      -ms-transition: all 0.3s ease-in-out 0s;
+      -o-transition: all 0.3s ease-in-out 0s;
+      transition: all 0.3s ease-in-out 0s; }
+      .hex-services .hex-service .hex-service__icon a {
+        height: 100%;
+        width: 100%;
+        display: inline-block; }
+    .hex-services .hex-service:hover .hex-service__icon {
+      top: -15px; }
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .hex-services {
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    text-align: center; }
+    .hex-services .hex-service {
+      width: 50%; } }
+@media only screen and (max-width: 767px) {
+  .hex-services {
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    text-align: center; }
+    .hex-services .hex-service {
+      width: 50%; } }
+@media only screen and (max-width: 575px) {
+  .hex-services {
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    text-align: center; }
+    .hex-services .hex-service {
+      width: 100%; } }
+
+/*# sourceMappingURL=service.css.map */

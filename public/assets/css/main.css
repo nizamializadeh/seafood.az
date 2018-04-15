@@ -1,0 +1,52 @@
+/*********************************************************************************
+
+	Template Name: Nails Boat - Fishing and Hunting Club HTML Template 
+	Template URI: https://themeforest.net/user/
+	Description: Nailsboat is a beautiful and creative fishing and hunting club  html template
+	Author: HasTech
+	Author URI: https://themeforest.net/user/hastech
+	Version: 1.0
+
+	Note: This is main css. All css files import here.
+
+**********************************************************************************/
+
+
+/*Basic styles*/
+@import url("https://devitems.com/preview/nailsboat/nailsboat/css/imports/basic/reset.css");
+@import url("https://devitems.com/preview/nailsboat/nailsboat/css/imports/basic/typography.css");
+@import url("https://devitems.com/preview/nailsboat/nailsboat/css/imports/basic/spacing.css");
+@import url("https://devitems.com/preview/nailsboat/nailsboat/css/imports/basic/helper-class.css");
+
+/*Elements*/
+@import url("https://devitems.com/preview/nailsboat/nailsboat/css/imports/elements/section-title.css");
+@import url("https://devitems.com/preview/nailsboat/nailsboat/css/imports/elements/button.css");
+@import url("https://devitems.com/preview/nailsboat/nailsboat/css/imports/elements/slider-elements.css");
+@import url("https://devitems.com/preview/nailsboat/nailsboat/css/imports/elements/social-icons.css");
+@import url("https://devitems.com/preview/nailsboat/nailsboat/css/imports/elements/breadcamb.css");
+
+/*Blocks*/
+@import url("https://devitems.com/preview/nailsboat/nailsboat/css/imports/blocks/header.css");
+@import url("https://devitems.com/preview/nailsboat/nailsboat/css/imports/blocks/navigation.css");
+@import url("https://devitems.com/preview/nailsboat/nailsboat/css/imports/blocks/banner.css");
+@import url("https://devitems.com/preview/nailsboat/nailsboat/css/imports/blocks/features.css");
+@import url("https://devitems.com/preview/nailsboat/nailsboat/css/imports/blocks/service.css");
+@import url("https://devitems.com/preview/nailsboat/nailsboat/css/imports/blocks/team.css");
+@import url("https://devitems.com/preview/nailsboat/nailsboat/css/imports/blocks/testimonial.css");
+@import url("https://devitems.com/preview/nailsboat/nailsboat/css/imports/blocks/product.css");
+@import url("https://devitems.com/preview/nailsboat/nailsboat/css/imports/blocks/blog.css");
+@import url("https://devitems.com/preview/nailsboat/nailsboat/css/imports/blocks/small-sections.css");
+@import url("https://devitems.com/preview/nailsboat/nailsboat/css/imports/blocks/newsletter.css");
+@import url("https://devitems.com/preview/nailsboat/nailsboat/css/imports/blocks/sif-form.css");
+@import url("https://devitems.com/preview/nailsboat/nailsboat/css/imports/blocks/offer.css");
+@import url("https://devitems.com/preview/nailsboat/nailsboat/css/imports/blocks/sidebar.css");
+@import url("https://devitems.com/preview/nailsboat/nailsboat/css/imports/blocks/pricebox.css");
+@import url("https://devitems.com/preview/nailsboat/nailsboat/css/imports/blocks/sp-service.css");
+@import url("https://devitems.com/preview/nailsboat/nailsboat/css/imports/blocks/single-product.css");
+@import url("https://devitems.com/preview/nailsboat/nailsboat/css/imports/blocks/blog-page.css");
+@import url("https://devitems.com/preview/nailsboat/nailsboat/css/imports/blocks/comment-box.css");
+@import url("https://devitems.com/preview/nailsboat/nailsboat/css/imports/blocks/contact.css");
+@import url("https://devitems.com/preview/nailsboat/nailsboat/css/imports/blocks/cart-page.css");
+@import url("https://devitems.com/preview/nailsboat/nailsboat/css/imports/blocks/checkout.css");
+@import url("https://devitems.com/preview/nailsboat/nailsboat/css/imports/blocks/footer.css");
+

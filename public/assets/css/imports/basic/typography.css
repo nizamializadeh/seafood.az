@@ -1,0 +1,120 @@
+/*======= Typography =======*/
+body {
+  overflow-x: hidden;
+  font-size: 15px;
+  line-height: 24px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Hind", sans-serif;
+  color: #606060;
+  font-weight: 400; }
+
+input::placeholder, textarea::placeholder {
+  color: #8e8e8e; }
+
+button {
+  border: none; }
+  button:hover, button:focus, button:active {
+    outline: none; }
+  button:hover {
+    cursor: pointer; }
+
+img {
+  max-width: 100%; }
+
+a {
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  -ms-transition: all 0.3s ease-in-out 0s;
+  -o-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s; }
+  a:focus, a:active, a:visited {
+    outline: none; }
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: "droid_serifbold_italic";
+  margin-bottom: 15px;
+  color: #303030; }
+
+h1,
+.h1 {
+  font-size: 36px;
+  line-height: 46px; }
+
+h2,
+.h2 {
+  font-size: 32px;
+  line-height: 40px; }
+
+h3,
+.h3 {
+  font-size: 28px;
+  line-height: 36px; }
+
+h4,
+.h4 {
+  font-size: 20px;
+  line-height: 24px; }
+
+h5,
+.h5 {
+  font-size: 17px;
+  line-height: 24px; }
+
+h6,
+.h6 {
+  font-size: 14px;
+  line-height: 20px; }
+
+p,
+pre,
+table,
+blockquote {
+  margin-bottom: 15px; }
+
+ul,
+ol {
+  list-style: none;
+  line-height: 24px; }
+
+ul.bullets {
+  list-style: inside; }
+
+ol {
+  list-style-type: upper-roman;
+  list-style-position: inside; }
+
+blockquote {
+  font-size: 16px;
+  line-height: 24px;
+  color: #424242;
+  font-weight: 500;
+  padding-left: 45px;
+  font-style: italic;
+  padding-right: 25px; }
+
+strong {
+  font-weight: 600; }
+
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  outline: none; }
+
+input:not([type="radio"]) {
+  height: 50px;
+  width: 100%;
+  padding: 0 30px;
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  -ms-transition: all 0.3s ease-in-out 0s;
+  -o-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s; }
+  input:not([type="radio"]):focus, input:not([type="radio"]):active {
+    outline: none; }
+
+select:focus, select:active {
+  outline: none; }
+
+/*# sourceMappingURL=typography.css.map */

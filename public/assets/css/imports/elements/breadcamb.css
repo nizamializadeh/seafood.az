@@ -1,0 +1,111 @@
+/*======= Breadcamb Styles =======*/
+.breadcamb .breadcamb__name h2 {
+  font-size: 46px;
+  letter-spacing: 0.1px;
+  color: #ffffff; }
+.breadcamb .breadcamb__tree {
+  position: relative; }
+  .breadcamb .breadcamb__tree:before {
+    content: "";
+    background: #d3d3d3;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0.1; }
+  .breadcamb .breadcamb__tree > *, .breadcamb .breadcamb__tree > div {
+    position: relative; }
+  .breadcamb .breadcamb__tree .breadcamb__tree__inner ul {
+    display: inline-block; }
+    .breadcamb .breadcamb__tree .breadcamb__tree__inner ul li {
+      font-size: 16px;
+      color: #7c7c7c;
+      letter-spacing: 0.1px;
+      text-transform: uppercase;
+      display: inline-block;
+      padding: 0 10px;
+      position: relative;
+      font-weight: 400; }
+      .breadcamb .breadcamb__tree .breadcamb__tree__inner ul li:after {
+        content: "-";
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        left: 100%; }
+      .breadcamb .breadcamb__tree .breadcamb__tree__inner ul li:first-child {
+        padding-left: 0; }
+      .breadcamb .breadcamb__tree .breadcamb__tree__inner ul li:last-child {
+        padding-right: -0px; }
+        .breadcamb .breadcamb__tree .breadcamb__tree__inner ul li:last-child:after {
+          display: none; }
+      .breadcamb .breadcamb__tree .breadcamb__tree__inner ul li a {
+        color: #7c7c7c; }
+        .breadcamb .breadcamb__tree .breadcamb__tree__inner ul li a:hover {
+          color: #44c3cf; }
+
+@media only screen and (max-width: 767px) {
+  .breadcamb .breadcamb__name h2 {
+    font-size: 32px; }
+  .breadcamb .breadcamb__tree div[class^="col-*"] {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 100%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 100%;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%; }
+  .breadcamb .breadcamb__tree .breadcamb__tree__inner {
+    text-align: center; }
+  .breadcamb .breadcamb__tree .breadcamb__tree__social {
+    padding-top: 10px;
+    text-align: center !important; } }
+.cr-pagination {
+  padding-top: 32px; }
+  .cr-pagination ul {
+    display: inline-block; }
+    .cr-pagination ul li {
+      font-size: 16px;
+      color: #b9b6b6;
+      letter-spacing: 0.1px;
+      text-transform: uppercase;
+      display: inline-block;
+      padding: 0 10px;
+      position: relative;
+      font-weight: 400;
+      font-family: "droid_serifbold_italic"; }
+      .cr-pagination ul li:after {
+        content: "/";
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        left: 100%; }
+      .cr-pagination ul li:first-child {
+        padding-left: 0; }
+      .cr-pagination ul li:last-child {
+        padding-right: -0px; }
+        .cr-pagination ul li:last-child:after {
+          display: none; }
+      .cr-pagination ul li a {
+        color: #b9b6b6; }
+      .cr-pagination ul li:hover a {
+        color: #5d5d5d; }
+      .cr-pagination ul li.active a {
+        color: #5d5d5d;
+        text-decoration: line-through; }
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .cr-pagination {
+    text-align: center !important; } }
+@media only screen and (max-width: 767px) {
+  .cr-pagination {
+    text-align: center !important; } }
+
+/*# sourceMappingURL=breadcamb.css.map */

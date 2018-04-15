@@ -1,0 +1,158 @@
+/*======= Pricebox Styles =======*/
+.pricebox .pricebox__single {
+  position: relative;
+  margin-right: 20px;
+  padding-right: 47px; }
+  .pricebox .pricebox__single:after {
+    content: "";
+    background: #fafafa;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    position: absolute;
+    height: 90%;
+    width: 100%;
+    top: 50%;
+    right: 0;
+    z-index: 1; }
+  .pricebox .pricebox__single .pricebox__single__inner {
+    margin-right: 68px;
+    padding-right: 75px;
+    background: #ededed;
+    width: 100%;
+    margin-left: 30px;
+    padding-right: 75px;
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    -ms-transition: all 0.3s ease-in-out 0s;
+    -o-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+    -webkit-box-shadow: 0 5px 8px rgba(0, 0, 0, 0.16);
+    -moz-box-shadow: 0 5px 8px rgba(0, 0, 0, 0.16);
+    -ms-box-shadow: 0 5px 8px rgba(0, 0, 0, 0.16);
+    -o-box-shadow: 0 5px 8px rgba(0, 0, 0, 0.16);
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.16);
+    margin-top: 30px;
+    position: relative;
+    z-index: 2; }
+    .pricebox .pricebox__single .pricebox__single__inner:first-child {
+      margin-left: 0; }
+    .pricebox .pricebox__single .pricebox__single__inner .pricebox__header {
+      padding-top: 55px;
+      padding-bottom: 30px;
+      padding-left: 40px; }
+      .pricebox .pricebox__single .pricebox__single__inner .pricebox__header h2 {
+        margin-bottom: 0;
+        font-size: 32px;
+        line-height: 32px;
+        color: #303030;
+        -webkit-transition: all 0.3s ease-in-out 0s;
+        -moz-transition: all 0.3s ease-in-out 0s;
+        -ms-transition: all 0.3s ease-in-out 0s;
+        -o-transition: all 0.3s ease-in-out 0s;
+        transition: all 0.3s ease-in-out 0s; }
+      .pricebox .pricebox__single .pricebox__single__inner .pricebox__header h5 {
+        font-size: 22px;
+        line-height: 32px;
+        color: #737373;
+        margin-bottom: 0;
+        -webkit-transition: all 0.3s ease-in-out 0s;
+        -moz-transition: all 0.3s ease-in-out 0s;
+        -ms-transition: all 0.3s ease-in-out 0s;
+        -o-transition: all 0.3s ease-in-out 0s;
+        transition: all 0.3s ease-in-out 0s; }
+    .pricebox .pricebox__single .pricebox__single__inner .pricebox__body {
+      padding-left: 40px;
+      position: relative; }
+      .pricebox .pricebox__single .pricebox__single__inner .pricebox__body:before, .pricebox .pricebox__single .pricebox__single__inner .pricebox__body:after {
+        content: "";
+        background: #d7d7d7;
+        height: 1px;
+        width: 100%;
+        left: 0;
+        top: 0;
+        position: absolute; }
+      .pricebox .pricebox__single .pricebox__single__inner .pricebox__body:after {
+        -webkit-transition: all 0.3s ease-in-out 0s;
+        -moz-transition: all 0.3s ease-in-out 0s;
+        -ms-transition: all 0.3s ease-in-out 0s;
+        -o-transition: all 0.3s ease-in-out 0s;
+        transition: all 0.3s ease-in-out 0s;
+        width: 0;
+        background: #ffffff; }
+      .pricebox .pricebox__single .pricebox__single__inner .pricebox__body ul {
+        padding: 25px 0; }
+        .pricebox .pricebox__single .pricebox__single__inner .pricebox__body ul li {
+          font-size: 16px;
+          line-height: 36px;
+          font-weight: 600;
+          color: #737373;
+          padding: 5px 0;
+          -webkit-transition: all 0.3s ease-in-out 0s;
+          -moz-transition: all 0.3s ease-in-out 0s;
+          -ms-transition: all 0.3s ease-in-out 0s;
+          -o-transition: all 0.3s ease-in-out 0s;
+          transition: all 0.3s ease-in-out 0s; }
+    .pricebox .pricebox__single .pricebox__single__inner .pricebox__footer {
+      position: relative;
+      padding: 40px 0;
+      padding-left: 40px; }
+      .pricebox .pricebox__single .pricebox__single__inner .pricebox__footer:before, .pricebox .pricebox__single .pricebox__single__inner .pricebox__footer:after {
+        content: "";
+        background: #d7d7d7;
+        height: 1px;
+        width: 100%;
+        left: 0;
+        top: 0;
+        position: absolute; }
+      .pricebox .pricebox__single .pricebox__single__inner .pricebox__footer:after {
+        -webkit-transition: all 0.3s ease-in-out 0s;
+        -moz-transition: all 0.3s ease-in-out 0s;
+        -ms-transition: all 0.3s ease-in-out 0s;
+        -o-transition: all 0.3s ease-in-out 0s;
+        transition: all 0.3s ease-in-out 0s;
+        width: 0;
+        background: #ffffff; }
+      .pricebox .pricebox__single .pricebox__single__inner .pricebox__footer a.cr-read-more {
+        color: #606060;
+        -webkit-transition: all 0.3s ease-in-out 0s;
+        -moz-transition: all 0.3s ease-in-out 0s;
+        -ms-transition: all 0.3s ease-in-out 0s;
+        -o-transition: all 0.3s ease-in-out 0s;
+        transition: all 0.3s ease-in-out 0s; }
+    .pricebox .pricebox__single .pricebox__single__inner:hover, .pricebox .pricebox__single .pricebox__single__inner.recommended {
+      background: #44c3cf; }
+      .pricebox .pricebox__single .pricebox__single__inner:hover .pricebox__header h2, .pricebox .pricebox__single .pricebox__single__inner.recommended .pricebox__header h2 {
+        color: #ffffff; }
+      .pricebox .pricebox__single .pricebox__single__inner:hover .pricebox__header h5, .pricebox .pricebox__single .pricebox__single__inner.recommended .pricebox__header h5 {
+        color: #ffffff; }
+      .pricebox .pricebox__single .pricebox__single__inner:hover .pricebox__body:after, .pricebox .pricebox__single .pricebox__single__inner.recommended .pricebox__body:after {
+        width: 100%; }
+      .pricebox .pricebox__single .pricebox__single__inner:hover .pricebox__body ul li, .pricebox .pricebox__single .pricebox__single__inner.recommended .pricebox__body ul li {
+        color: #ffffff; }
+      .pricebox .pricebox__single .pricebox__single__inner:hover .pricebox__footer:after, .pricebox .pricebox__single .pricebox__single__inner.recommended .pricebox__footer:after {
+        width: 100%; }
+      .pricebox .pricebox__single .pricebox__single__inner:hover .pricebox__footer a.cr-read-more, .pricebox .pricebox__single .pricebox__single__inner.recommended .pricebox__footer a.cr-read-more {
+        color: #ffffff; }
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .pricebox .pricebox__single {
+    margin-right: 0;
+    padding-right: 27px; } }
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .pricebox .pricebox__single {
+    margin-right: 0;
+    padding-right: 27px; } }
+@media only screen and (max-width: 575px) {
+  .pricebox .pricebox__single {
+    margin-right: 0; } }
+@media only screen and (max-width: 575px) {
+  .pricebox .pricebox__single {
+    margin-right: 0;
+    padding-right: 27px; }
+    .pricebox .pricebox__single .pricebox__single__inner {
+      padding-right: 30px; } }
+
+/*# sourceMappingURL=pricebox.css.map */

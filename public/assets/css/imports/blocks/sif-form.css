@@ -1,0 +1,221 @@
+/*======= Popup Form Styles =======*/
+.wrapper {
+  position: relative; }
+
+.sif-wrapper {
+  z-index: -21;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: fixed;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  -moz-transition: all 0.5s ease-in-out 0s;
+  -ms-transition: all 0.5s ease-in-out 0s;
+  -o-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
+  visibility: hidden; }
+  .sif-wrapper.is-visible {
+    visibility: visible;
+    opacity: 1;
+    z-index: 21; }
+  .sif-wrapper .body-overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 21;
+    height: 100%;
+    width: 100%;
+    background: #15181C;
+    opacity: 0;
+    -webkit-transition: all 0.5s ease-in-out 0s;
+    -moz-transition: all 0.5s ease-in-out 0s;
+    -ms-transition: all 0.5s ease-in-out 0s;
+    -o-transition: all 0.5s ease-in-out 0s;
+    transition: all 0.5s ease-in-out 0s;
+    cursor: url("../../../images/icons/cross-icon.png"), crosshair; }
+  .sif-wrapper .sif {
+    position: absolute;
+    z-index: 23;
+    left: 50%;
+    top: 50%;
+    width: 1030px;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: translate(-50%, -120%);
+    -moz-transform: translate(-50%, -120%);
+    -ms-transform: translate(-50%, -120%);
+    -o-transform: translate(-50%, -120%);
+    transform: translate(-50%, -120%);
+    -webkit-transition: transform 0.5s cubic-bezier(0.38, 0.7, 0.66, 0.82) 0.3s;
+    -moz-transition: transform 0.5s cubic-bezier(0.38, 0.7, 0.66, 0.82) 0.3s;
+    -ms-transition: transform 0.5s cubic-bezier(0.38, 0.7, 0.66, 0.82) 0.3s;
+    -o-transition: transform 0.5s cubic-bezier(0.38, 0.7, 0.66, 0.82) 0.3s;
+    transition: transform 0.5s cubic-bezier(0.38, 0.7, 0.66, 0.82) 0.3s;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex; }
+    .sif-wrapper .sif .sif-close-button {
+      display: inline-block;
+      height: 40px;
+      width: 40px;
+      background: transparent;
+      text-align: center;
+      line-height: 40px;
+      font-size: 20px;
+      color: #333333;
+      position: absolute;
+      right: 4px;
+      top: 6px;
+      cursor: pointer;
+      -webkit-transition: all 0.3s ease-in-out 0s;
+      -moz-transition: all 0.3s ease-in-out 0s;
+      -ms-transition: all 0.3s ease-in-out 0s;
+      -o-transition: all 0.3s ease-in-out 0s;
+      transition: all 0.3s ease-in-out 0s; }
+      .sif-wrapper .sif .sif-close-button:hover {
+        opacity: 0.9;
+        color: #44c3cf; }
+    .sif-wrapper .sif h3.sif-title {
+      font-family: "droid_serifbold_italic";
+      font-size: 24px;
+      color: #303030;
+      padding-bottom: 7px; }
+    .sif-wrapper .sif .single-input {
+      margin-top: 25px; }
+      .sif-wrapper .sif .single-input input {
+        height: 40px;
+        line-height: 42px;
+        border: 1px solid #aaaaaa;
+        background: transparent;
+        font-size: 14px;
+        font-weight: 400;
+        color: #888888; }
+        .sif-wrapper .sif .single-input input:focus {
+          border-color: #44c3cf; }
+        .sif-wrapper .sif .single-input input::placeholder {
+          color: #888888; }
+      .sif-wrapper .sif .single-input button {
+        padding: 0 35px; }
+    .sif-wrapper .sif .sif__login {
+      width: 50%;
+      padding: 80px;
+      padding-right: 170px;
+      background: #dcdcdc; }
+      .sif-wrapper .sif .sif__login .sif-login__others {
+        margin-top: 50px; }
+        .sif-wrapper .sif .sif__login .sif-login__others h6 {
+          font-family: "droid_serifitalic";
+          color: #888888;
+          font-size: 14px;
+          margin-bottom: 25px; }
+    .sif-wrapper .sif .sif__register {
+      padding: 80px;
+      width: 50%;
+      background: #d7d7d7;
+      padding-right: 170px; }
+  .sif-wrapper.is-visible .sif {
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    visibility: visible; }
+  .sif-wrapper.is-visible .body-overlay {
+    opacity: 0.85;
+    visibility: visible; }
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .sif-wrapper .sif {
+    width: 850px; }
+    .sif-wrapper .sif .sif__register {
+      padding: 50px;
+      padding-right: 70px; }
+    .sif-wrapper .sif .sif__login {
+      padding: 50px;
+      padding-right: 70px; } }
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .sif-wrapper {
+    overflow-x: hidden;
+    overflow-y: scroll; }
+    .sif-wrapper .sif {
+      width: 700px;
+      top: 50px;
+      -webkit-flex-wrap: wrap;
+      -moz-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+      .sif-wrapper .sif .sif__register {
+        width: 100%;
+        padding: 30px;
+        padding-right: 30px; }
+      .sif-wrapper .sif .sif__login {
+        width: 100%;
+        padding: 30px;
+        padding-right: 30px; }
+      .sif-wrapper .sif .sif-close-button {
+        left: auto;
+        right: 0; }
+    .sif-wrapper.is-visible .sif {
+      -webkit-transform: translate(-50%, 0);
+      -moz-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+      -o-transform: translate(-50%, 0);
+      transform: translate(-50%, 0); } }
+@media only screen and (max-width: 767px) {
+  .sif-wrapper {
+    overflow-x: hidden;
+    overflow-y: scroll; }
+    .sif-wrapper .sif {
+      top: 50px;
+      width: calc(100% - 60px);
+      -webkit-transform: translate(-50%, -120%);
+      -moz-transform: translate(-50%, -120%);
+      -ms-transform: translate(-50%, -120%);
+      -o-transform: translate(-50%, -120%);
+      transform: translate(-50%, -120%);
+      -webkit-flex-wrap: wrap;
+      -moz-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      left: 50%; }
+      .sif-wrapper .sif .sif__register {
+        width: 100%;
+        padding: 30px;
+        padding-right: 30px; }
+      .sif-wrapper .sif .sif__login {
+        width: 100%;
+        padding: 30px;
+        padding-right: 30px; }
+      .sif-wrapper .sif.is-visible {
+        -webkit-transform: translate(0, 0);
+        -moz-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+        -o-transform: translate(0, 0);
+        transform: translate(0, 0); }
+      .sif-wrapper .sif .sif-close-button {
+        left: auto;
+        right: 0; }
+    .sif-wrapper.is-visible .sif {
+      -webkit-transform: translate(-50%, 0);
+      -moz-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+      -o-transform: translate(-50%, 0);
+      transform: translate(-50%, 0); } }
+
+/*# sourceMappingURL=sif-form.css.map */
