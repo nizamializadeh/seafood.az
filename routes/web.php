@@ -44,6 +44,12 @@ Route::prefix('admin')->group(function() {
   Route::get('/service/{service}/edit', 'Backend\ServicesController@edit');
   Route::patch('/service/{service}', 'Backend\ServicesController@update');
   Route::delete('/service/{service}/delete', 'Backend\ServicesController@destroy');
+  Route::get('/socials', 'Backend\SocialsController@index');
+  Route::get('socialCreate', 'Backend\SocialsController@create');
+  Route::post('/social-create', 'Backend\SocialsController@store');
+  Route::get('/social/{social}/edit', 'Backend\SocialsController@edit');
+  Route::patch('/social/{social}', 'Backend\SocialsController@update');
+  Route::delete('/social/{social}/delete', 'Backend\SocialsController@destroy');
   Route::get('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
 
   // Password reset routes
