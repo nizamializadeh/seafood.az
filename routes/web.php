@@ -50,6 +50,9 @@ Route::prefix('admin')->group(function() {
   Route::get('/social/{social}/edit', 'Backend\SocialsController@edit');
   Route::patch('/social/{social}', 'Backend\SocialsController@update');
   Route::delete('/social/{social}/delete', 'Backend\SocialsController@destroy');
+  Route::get('/contact-admin', 'Backend\ContactController@index');
+  Route::get('/contact/{contact}/edit', 'Backend\ContactController@edit');
+  Route::patch('/contact/{contact}', 'Backend\ContactController@update');
   Route::get('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
 
   // Password reset routes
