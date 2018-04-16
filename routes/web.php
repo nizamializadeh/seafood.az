@@ -56,6 +56,13 @@ Route::prefix('admin')->group(function() {
   Route::get('/slider', 'Backend\SliderController@index');
   Route::get('/slider/{slider}/edit', 'Backend\SliderController@edit');
   Route::patch('/slider/{slider}', 'Backend\SliderController@update');
+  Route::get('/blogs', 'Backend\BlogsController@index');
+  Route::get('/blogcats', 'Backend\BlogCatsController@index');
+  Route::get('/blogcategoryCreate', 'Backend\BlogCatsController@create');
+  Route::post('/blogcategory-create', 'Backend\BlogCatsController@store');
+  Route::get('/blogcategoryedit/{category}/edit', 'Backend\BlogCatsController@edit');
+  Route::patch('/blogcategory/{category}', 'Backend\BlogCatsController@update');
+  Route::delete('/blogcategory/{category}/delete', 'Backend\BlogCatsController@destroy');
   Route::get('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
 
   // Password reset routes
