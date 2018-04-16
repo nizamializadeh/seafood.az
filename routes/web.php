@@ -53,6 +53,9 @@ Route::prefix('admin')->group(function() {
   Route::get('/contact-admin', 'Backend\ContactController@index');
   Route::get('/contact/{contact}/edit', 'Backend\ContactController@edit');
   Route::patch('/contact/{contact}', 'Backend\ContactController@update');
+  Route::get('/slider', 'Backend\SliderController@index');
+  Route::get('/slider/{slider}/edit', 'Backend\SliderController@edit');
+  Route::patch('/slider/{slider}', 'Backend\SliderController@update');
   Route::get('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
 
   // Password reset routes

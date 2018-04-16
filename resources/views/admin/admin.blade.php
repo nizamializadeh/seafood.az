@@ -103,7 +103,7 @@
                     <a href="{{url('/admin/about-admin')}}" class="waves-effect"><i class="fa fa-font fa-fw" aria-hidden="true"></i>About</a>
                 </li>
                 <li>
-                    <a href="{{url('/categories')}}" class="waves-effect"><i class="fa fa-bookmark"></i>&nbsp Categories</a>
+                    <a href="{{url('/admin/slider')}}" class="waves-effect"><i class="fa fa-images" aria-hidden="true"></i> &nbsp Slider</a>
                 </li>
                 <li>
                     <a href="{{url('/admin/services-admin')}}" class="waves-effect"><i class="fa fa-sliders" aria-hidden="true"></i>&nbsp Services</a>
@@ -138,7 +138,7 @@
 
         </div>
         <!-- /.container-fluid -->
-        <footer class="footer text-center"> 2018 &copy; Meslehetli Admin brought to you by <a href="{{ url('http://jafarli.me') }}" target="_blank">Jafarli</a></footer>
+        <footer class="footer text-center"> 2018 &copy; Seafood Admin brought to you by <a href="{{ url('http://jafarli.me') }}" target="_blank">Jafarli</a></footer>
     </div>
     <!-- /#page-wrapper -->
     <!-- /#wrapper -->
