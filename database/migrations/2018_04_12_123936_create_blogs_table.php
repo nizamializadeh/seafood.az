@@ -22,8 +22,8 @@ class CreateBlogsTable extends Migration
             $table->text('blog_text_en');
             $table->text('blog_text_ru');
             $table->string('blog_image');
-            $table->text('keywords');
-            $table->integer('count');
+            $table->text('keywords')->nulled();
+            $table->integer('count')->nulled();
             $table->integer('blog_cat_id')->unsigned()->index();
             $table->foreign('blog_cat_id')->references('id')->on('blog_categories')->onDelete('cascade');
             $table->timestamps();
