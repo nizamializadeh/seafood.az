@@ -76,6 +76,9 @@ Route::prefix('admin')->group(function() {
   Route::get('/camp/{camp}/edit', 'Backend\CampsController@edit');
   Route::patch('/camp/{camp}', 'Backend\CampsController@update');
   Route::delete('/camp/{camp}/delete', 'Backend\CampsController@destroy');
+  Route::get('/brands', 'Backend\BrandsController@index');
+  Route::post('/brand-create', 'Backend\BrandsController@store');
+  Route::delete('/brand/{brand}/delete', 'Backend\BrandsController@destroy');
   Route::get('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
 
   // Password reset routes

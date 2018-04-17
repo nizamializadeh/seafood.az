@@ -34,7 +34,6 @@
         <div class="panel-body">
             <div class="page-header">
                 <img src="{{ url('/images/'.$camp->camp_image) }}" class="img-responsive">
-
             </div>
         </div>
     </div>

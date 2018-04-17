@@ -118,7 +118,7 @@
                     <a href="{{url('/admin/blogs-admin')}}" class="waves-effect"><i class="fa fa-envira"></i> &nbsp Blogs</a>
                 </li>
                 <li>
-                    <a href="{{url('/emails')}}" class="waves-effect"><i class="fa fa-envelope"></i> &nbsp Emails</a>
+                    <a href="{{url('/admin/brands')}}" class="waves-effect"><i class="fa fa-bandcamp"></i> &nbsp Brands</a>
                 </li>
                 <li>
                     <a href="{{url('/admin/contact-admin')}}" class="waves-effect"><i class="fa fa-globe fa-fw" aria-hidden="true"></i>Contact</a>
