@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Blog;
-use App\BlogCategory;
+use App\Camp;
 use DOMDocument;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class BlogsController extends Controller
+class CampsController extends Controller
 {
     public function __construct()
     {
@@ -22,8 +21,8 @@ class BlogsController extends Controller
      */
     public function index()
     {
-        $blogs = Blog::all();
-        return view('admin.pages.blogs.blogs', compact('blogs'));
+        $camps = Camp::OrderBy('id', 'DESC')->get();
+        return view('admin.pages.camps.camps', compact('camps'));
     }
 
     /**
@@ -33,8 +32,7 @@ class BlogsController extends Controller
      */
     public function create()
     {
-        $categories = BlogCategory::OrderBy('id', 'DESC')->get();
-        return view('admin.pages.blogs.create', compact('categories'));
+        return view('admin.pages.camps.create');
     }
 
     /**
@@ -45,13 +43,13 @@ class BlogsController extends Controller
      */
     public function store(Request $request)
     {
-        $blog = new Blog();
-        $blog->blog_title_az = $request->title_az;
-        $blog->blog_title_en = $request->title_en;
-        $blog->blog_title_ru = $request->title_ru;
+        $camp = new Camp();
+        $camp->camp_title_az = $request->title_az;
+        $camp->camp_title_en = $request->title_en;
+        $camp->camp_title_ru = $request->title_ru;
 
         $dom = new DomDocument();
-        $dom->loadHtml($blog, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+        $dom->loadHtml($camp, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
         $images = $dom->getElementsByTagName('img');
         // foreach <img> in the submited message
         foreach($images as $img){
@@ -76,25 +74,25 @@ class BlogsController extends Controller
             } // <!--endif
         } // <!--endforeach
 
-        $blog->blog_text_az = $dom->saveHTML();
-        $blog->blog_text_az = $request->text_az;
+        $camp->camp_desc_az = $dom->saveHTML();
+        $camp->camp_desc_az = $request->desc_az;
 
-        $blog->blog_text_en = $dom->saveHTML();
-        $blog->blog_text_en = $request->text_en;
+        $camp->camp_desc_en = $dom->saveHTML();
+        $camp->camp_desc_en = $request->desc_en;
 
-        $blog->blog_text_ru = $dom->saveHTML();
-        $blog->blog_text_ru = $request->text_ru;
+        $camp->camp_desc_ru = $dom->saveHTML();
+        $camp->camp_desc_ru = $request->desc_ru;
 
-        $blog->keywords = $request->keywords;
-        $blog->blog_cat_id = $request->category_id;
-        $blog->count = 3;
+        $camp->date = $request->date;
+        $camp->time = $request->time;
+        $camp->location = $request->location;
         if ($request->hasFile('img')){
             $name = time().".".$request->file("img")->extension();
-            $blog->blog_image = $name;
+            $camp->camp_image = $name;
             $request->file("img")->move(public_path().'/images', $name);
         }
-        $blog->save();
-        return redirect('/admin/blogs-admin');
+        $camp->save();
+        return redirect('/admin/camps-admin');
     }
 
     /**
@@ -105,8 +103,8 @@ class BlogsController extends Controller
      */
     public function show($id)
     {
-        $blog = Blog::findOrFail($id);
-        return view('admin.pages.blogs.show', compact('id', 'blog'));
+        $camp = Camp::findOrFail($id);
+        return view('admin.pages.camps.show', compact('id', 'camp'));
     }
 
     /**
@@ -115,11 +113,10 @@ class BlogsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Blog $blog)
+    public function edit(Camp $camp)
     {
-        $categories = BlogCategory::OrderBy('id', 'DESC')->get();
-        $data = Blog::find($blog);
-        return view('admin.pages.blogs.edit', compact('data', 'blog', 'categories'));
+        $data = Camp::find($camp);
+        return view('admin.pages.camps.edit', compact('camp', 'data'));
     }
 
     /**
@@ -129,25 +126,25 @@ class BlogsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $blog)
+    public function update(Request $request, $camp)
     {
-        $blog = Blog::find($blog);
-        $blog->blog_title_az = $request->title_az;
-        $blog->blog_title_en = $request->title_en;
-        $blog->blog_title_ru = $request->title_ru;
-        $blog->blog_text_az = $request->text_az;
-        $blog->blog_text_en = $request->text_en;
-        $blog->blog_text_ru = $request->text_ru;
-        $blog->keywords = $request->keywords;
-        $blog->blog_cat_id = $request->category_id;
-        $blog->count = 3;
+        $camp = Camp::find($camp);
+        $camp->camp_title_az = $request->title_az;
+        $camp->camp_title_en = $request->title_en;
+        $camp->camp_title_ru = $request->title_ru;
+        $camp->camp_desc_az = $request->desc_az;
+        $camp->camp_desc_en = $request->desc_en;
+        $camp->camp_desc_ru = $request->desc_ru;
+        $camp->date = $request->date;
+        $camp->time = $request->time;
+        $camp->location = $request->location;
         if ($request->hasFile('img')){
             $name = time().".".$request->file("img")->extension();
-            $blog->blog_image = $name;
+            $camp->camp_image = $name;
             $request->file("img")->move(public_path().'/images', $name);
         }
-        $blog->save();
-        return redirect('/admin/blogs-admin');
+        $camp->save();
+        return redirect('/admin/camps-admin');
     }
 
     /**
@@ -158,8 +155,8 @@ class BlogsController extends Controller
      */
     public function destroy($id)
     {
-        $blog = Blog::find($id);
-        $blog->delete();
-        return redirect('/admin/blogs-admin');
+        $camp = Camp::find($id);
+        $camp->delete();
+        return redirect('/admin/camps-admin');
     }
 }
