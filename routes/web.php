@@ -79,6 +79,13 @@ Route::prefix('admin')->group(function() {
   Route::get('/brands', 'Backend\BrandsController@index');
   Route::post('/brand-create', 'Backend\BrandsController@store');
   Route::delete('/brand/{brand}/delete', 'Backend\BrandsController@destroy');
+  Route::get('/products-admin', 'Backend\ProductsController@index');
+  Route::get('/productCreate', 'Backend\ProductsController@create');
+  Route::post('/product-create', 'Backend\ProductsController@store');
+  Route::get('/product/{product}/edit', 'Backend\ProductsController@edit');
+  Route::patch('/product/{product}', 'Backend\ProductsController@update');
+  Route::get('/show/product/{product}', 'Backend\ProductsController@show');
+  Route::delete('/product/{product}/delete', 'Backend\ProductsController@destroy');
   Route::get('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
 
   // Password reset routes

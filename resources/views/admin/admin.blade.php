@@ -112,6 +112,9 @@
                     <a href="{{url('/admin/camps-admin')}}" class="waves-effect"><i class="fa fa-compass" aria-hidden="true"></i>&nbsp Camps</a>
                 </li>
                 <li>
+                    <a href="{{url('/admin/products-admin')}}" class="waves-effect"><i class="fa fa-flag" aria-hidden="true"></i>&nbsp Products</a>
+                </li>
+                <li>
                     <a href="{{url('/admin/blogcats')}}" class="waves-effect"><i class="fa fa-at" aria-hidden="true"></i>&nbsp Blog's Categories</a>
                 </li>
                 <li>
