@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Product;
+use App\Product_Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Auth;
@@ -21,12 +23,18 @@ class IndexController extends Controller
         return view('frontend.pages.services');
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function shop(){
-        return view('frontend.pages.shop');
+        $products = Product::OrderBy('id', 'DESC')->get();
+        return view('frontend.pages.shop',  compact('products'));
     }
 
-    public function product(){
-        return view('frontend.pages.product');
+    public function product($id){
+        $product = Product::find($id);
+        $categories = Product_Category::OrderBy('id', 'DESC')->get();
+        return view('frontend.pages.product', compact('product', 'id', 'categories'));
     }
 
     public function blogs(){

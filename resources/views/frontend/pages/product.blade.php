@@ -56,8 +56,8 @@
 
                                     <!-- START SINGLE PRODUCT LEFT INFO -->
                                     <div class="spi__images tab-content" id="single-pdoduct--images">
-                                        <a class="spi-image-popup tab-pane fade show active" href="images/single-product/large/1.jpg" id="product-image-1">
-                                            <img src="images/single-product/medium/1.jpg" alt="single product thumb">
+                                        <a class="spi-image-popup tab-pane fade show active" href="{{ '/images/'.$product->product_image }}" target="_blank" id="product-image-1">
+                                            <img src="{{ '/images/'.$product->product_image }}" alt="single product thumb">
                                         </a>
                                         <a class="spi-image-popup tab-pane fade" id="product-image-2" href="images/single-product/large/2.jpg">
                                             <img src="images/single-product/medium/2.jpg" alt="single product thumb">
@@ -71,7 +71,7 @@
                                     <div class="spi__contents">
                                         <div class="spi-info__top">
                                             <div class="title-ratings">
-                                                <h2>Fishing Reel</h2>
+                                                <h2>{{ $product->product_name_az }}</h2>
                                                 <ul class="ratings">
                                                     <li class="rated"><i class="fa fa-star"></i></li>
                                                     <li class="rated"><i class="fa fa-star"></i></li>
@@ -81,50 +81,43 @@
                                                 </ul>
                                             </div>
                                             <div class="old-new-price">
-                                                <span class="old-price">$135.00</span>
-                                                <span class="new-price">$105.00</span>
+                                                <span class="new-price">{{ $product->price }} AZN</span>
                                             </div>
                                         </div>
-                                        <p>Lets do better design was born and I will give you a mplete of the tem, and pund  actual teachings of the great explorer ecial contet to make it beautiful know how to pursu</p>
+                                        <p>{{ $product->product_details_az }}</p>
                                         <div class="spi-units">
-                                            <div class="spi-units__single unit-product-id">
-                                                <h5 class="spi-title">Product ID : </h5>
-                                                <span>WCYK 215</span>
-                                            </div>
-                                            <div class="spi-units__single unit-colors">
-                                                <h5 class="spi-title">Color : </h5>
-                                                <ul>
-                                                    <li class="color-grey"><a href="single-product.html#"><span></span></a></li>
-                                                    <li class="color-yellow"><a href="single-product.html#"><span></span></a></li>
-                                                    <li class="color-red"><a href="single-product.html#"><span></span></a></li>
-                                                </ul>
-                                            </div>
+
                                             <div class="spi-units__single unit-quantity">
                                                 <h5 class="spi-title">Quantity :</h5>
                                                 <div class="cart-plus-minus">
                                                     <input type="text" value="02" name="qtybutton" class="cart-plus-minus-box">
                                                 </div>
                                             </div>
-                                            <div class="spi-units__single unit-review">
-                                                <h5 class="spi-title">Reviews : </h5>
-                                                <span>25 review</span>
-                                            </div>
                                         </div>
                                         <div class="product-action">
                                             <ul>
-                                                <li><a href="single-product.html#"><span class="text">add to cart</span><span class="icon"><i class="fa fa-opencart"></i></span></a></li>
+                                                <li>
+                                                    <form action="{{ url('/cart-post') }}" method="POST">
+                                                        {{ csrf_field() }}
+
+                                                        <input type="hidden" name="id" value="{{ $product->id }}">
+                                                        <input type="hidden" name="name" value="{{ $product->product_name_az }}">
+                                                        <input type="hidden" name="price" value="{{ $product->precent }}">
+                                                        <button type="submit" class="btn"><span class="text">add to cart</span> <span class="icon"><i class="fa fa-shopping-basket"></i></span></button>
+                                                    </form>
+                                                </li>
                                                 <li><a href="single-product.html#"><span class="icon"><i class="fa fa-heart-o"></i></span></a></li>
                                             </ul>
                                         </div>
                                         <div class="spi__tab-trigger nav" role="tablist">
                                             <a data-toggle="tab" href="single-product.html#product-image-1">
-                                                <img src="images/single-product/small/2.jpg" alt="single image">
+                                                <img src="{{ url('images/single-product/small/2.jpg') }}" alt="single image">
                                             </a>
                                             <a data-toggle="tab" href="single-product.html#product-image-2">
-                                                <img src="images/single-product/small/3.jpg" alt="single image">
+                                                <img src="{{ url('images/single-product/small/3.jpg') }}" alt="single image">
                                             </a>
                                             <a data-toggle="tab" href="single-product.html#product-image-3">
-                                                <img src="images/single-product/small/1.jpg" alt="single image">
+                                                <img src="{{ url('images/single-product/small/1.jpg') }}" alt="single image">
                                             </a>
                                         </div>
                                     </div><!-- END SINGLE PRODUCT RIGHT INFO -->
@@ -133,16 +126,7 @@
                                 <!-- START SINGLE PRODUCT DETAILS -->
                                 <div class="single-product__details pt--100">
                                     <h4 class="small-title">Details</h4>
-                                    <p>Lets do better design was born and I will give you a mplete of the tem, and pund  actual teachings of the great explorer ecial contet to make it beautiful know how to pursu obis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur </p>
-                                    <div class="sp-details__inner-text">
-                                        <div class="single-block__content">
-                                            <p>Lets do better design was born and I will give you a mplete of the tem, and pund  actual teachings of the great explorer ecial contet to make it eautiful know how to pursu obis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda </p>
-                                            <p>Lets do better design was born and I will give you a mplete of the tem, and pund  actual teachings of the great explorer ecial contet to make it eautiful know how to pursu obis est eligendi optio cumque</p>
-                                        </div>
-                                        <div class="single-block__image">
-                                            <img src="https://devitems.com/preview/nailsboat/nailsboat/images/single-product/content-image.jpg" alt="content image">
-                                        </div>
-                                    </div>
+                                    <p>{!!  $product->product_desc_az !!}</p>
                                 </div><!-- END SINGLE PRODUCT DETAILS -->
 
                                 <!-- START SIGNLE PRODUCT COMMENT FORM -->
@@ -181,51 +165,9 @@
                                 <div class="single-widget sb-categories">
                                     <h4 class="widget-title">Categories</h4>
                                     <ul>
-                                        <li><a href="shop-right-sidebar.html">Fishing Rods .................... (48)</a></li>
-                                        <li><a href="shop-right-sidebar.html">Fishing Reels ................... (32)</a></li>
-                                        <li><a href="shop-right-sidebar.html">Fishing Baits .................... (26)</a></li>
-                                        <li><a href="shop-right-sidebar.html">Bags / Cases .................... (48)</a></li>
-                                        <li><a href="shop-right-sidebar.html">Fishing Lures ................... (48)</a></li>
-                                        <li><a href="shop-right-sidebar.html">Fishing Gripper................ (48)</a></li>
-                                        <li><a href="shop-right-sidebar.html">Others................................. (48)</a></li>
-                                    </ul>
-                                </div><!-- END SINGLE WIDGET -->
-                                <!-- START SINGLE WIDGET -->
-                                <div class="single-widget sb-price-range">
-                                    <h4 class="widget-title">Price Range</h4>
-                                    <div id="slider-range"></div>
-                                    <p>
-                                        <input type="text" id="amount" readonly="readonly">
-                                    </p>
-                                </div><!-- END SINGLE WIDGET -->
-                                <!-- START SINGLE WIDGET -->
-                                <div class="single-widget sb-morepost">
-                                    <h4 class="widget-title">Compititions</h4>
-                                    <ul>
-                                        <li>
-                                            <a href="single-product.html#">Alvine Fishing Contest 2017</a>
-                                            <p>28 Setember, Start 10 am New Yourk City</p>
-                                        </li>
-                                        <li>
-                                            <a href="single-product.html#">Sinjent Fishing Contest 2017</a>
-                                            <p>05 October, Start 10 am Las Vages</p>
-                                        </li>
-                                        <li>
-                                            <a href="single-product.html#">Alvine Fishing Contest 2017</a>
-                                            <p>28 October, Start 10 am San francisco</p>
-                                        </li>
-                                    </ul>
-                                </div><!-- END SINGLE WIDGET -->
-                                <!-- START SINGLE WIDGET -->
-                                <div class="single-widget sb-tags">
-                                    <h4 class="widget-title">Tags</h4>
-                                    <ul>
-                                        <li><a href="shop-right-sidebar.html">Fishing</a></li>
-                                        <li><a href="shop-right-sidebar.html">Fisherman</a></li>
-                                        <li><a href="shop-right-sidebar.html">Compitition</a></li>
-                                        <li><a href="shop-right-sidebar.html">Fish</a></li>
-                                        <li><a href="shop-right-sidebar.html">Hobby</a></li>
-                                        <li><a href="shop-right-sidebar.html">Fishing Baits</a></li>
+                                        @foreach($categories as $category)
+                                        <li><a href="">{{ $category->product_cat_az }}</a></li>
+                                        @endforeach
                                     </ul>
                                 </div><!-- END SINGLE WIDGET -->
                             </div><!-- END SIDEBAR WIDGETS -->

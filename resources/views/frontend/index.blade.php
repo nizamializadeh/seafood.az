@@ -57,51 +57,34 @@
             </nav>
             <div class="header__side__icons">
                 <ul class="nav">
-                    <li><a href="shop-right-sidebar.html"><i class="fa fa-opencart"></i><span class="shop-items">2</span></a>
+                    <li><a href="shop-right-sidebar.html"><i class="fa fa-shopping-basket"></i> @if(Cart::instance('default')->count() > 0) <span class="shop-items">{{ Cart::instance('default')->count() }}</span> @endif</a>
                         <div class="minicart">
                             <div class="minicart__products">
-                                <div class="single-product">
-                                    <div class="single-product__thumb">
-                                        <a href="single-product.html">
-                                            <img src="images/cart/1.png" alt="single product">
-                                        </a>
-                                    </div>
-                                    <div class="single-product__content">
-                                        <a href="single-product.html">Fishing Reels</a>
-                                        <p>$250 <span>X</span> 1</p>
-                                    </div>
-                                    <div class="single-product__close">
-                                        <button class="minicart-product-close"><i class="fa fa-trash-o"></i></button>
-                                    </div>
-                                </div>
-                                <div class="single-product">
-                                    <div class="single-product__thumb">
-                                        <a href="single-product.html">
-                                            <img src="images/cart/2.png" alt="single product">
-                                        </a>
-                                    </div>
-                                    <div class="single-product__content">
-                                        <a href="single-product.html">Fishing Reels</a>
-                                        <p>$150 <span>X</span> 1</p>
-                                    </div>
-                                    <div class="single-product__close">
-                                        <button class="minicart-product-close"><i class="fa fa-trash-o"></i></button>
-                                    </div>
-                                </div>
-                                <div class="single-product">
-                                    <div class="single-product__thumb">
-                                        <a href="single-product.html">
-                                            <img src="images/cart/3.png" alt="single product">
-                                        </a>
-                                    </div>
-                                    <div class="single-product__content">
-                                        <a href="single-product.html">Fishing Reels</a>
-                                        <p>$200 <span>X</span> 1</p>
-                                    </div>
-                                    <div class="single-product__close">
-                                        <button class="minicart-product-close"><i class="fa fa-trash-o"></i></button>
-                                    </div>
-                                </div>
+                                @if(Cart::count() > 0)
+                                    @foreach(Cart::content() as $item)
+                                        @php
+                                            $link_product = str_slug($item->model->product_name_en, '_')
+                                        @endphp
+                                            <div class="single-product">
+                                                <div class="single-product__thumb">
+                                                    <a href="{{ url('/product/'.$item->id.'/'.$link_product) }}">
+                                                        <img src="{{ '/images/'.$item->model->product_image }}" alt="single product">
+                                                    </a>
+                                                </div>
+                                                <div class="single-product__content">
+                                                    <a href="{{ url('/product/'.$item->id.'/'.$link_product) }}">{{ $item->model->product_name_az }}</a>
+                                                    <p>{{ $item->model->price }} <span>X</span> 1</p>
+                                                </div>
+                                                <div class="single-product__close">
+                                                    <form action="{{ route('cart.destroy', $item->rowId) }}" method="POST">
+                                                        {{ csrf_field() }}
+                                                        {{ method_field('DELETE') }}
+                                                        <button type="submit" class="minicart-product-close"><i class="fa fa-trash-o"></i></button>
+                                                    </form>
+                                                </div>
+
+                                            </div>
+                                    @endforeach
                             </div>
                             <div class="minicart__bottom">
                                 <div class="total-price d-flex justify-content-between">
@@ -109,10 +92,13 @@
                                     <span>$600</span>
                                 </div>
                                 <div class="minicart__buttons d-flex justify-content-between">
-                                    <a href="https://devitems.com/preview/nailsboat/nailsboat/cart.html" class="cr-btn cr-btn--xs">View Cart</a>
+                                    <a href="{{ url('/cart') }}" class="cr-btn cr-btn--xs">View Cart</a>
                                     <a href="checkout.html" class="cr-btn cr-btn--xs">Checkout</a>
                                 </div>
                             </div>
+                            @else
+                            No items in cart
+                            @endif
                         </div>
                     </li>
                     @if (Auth::guest())

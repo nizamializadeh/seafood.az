@@ -50,186 +50,26 @@
             <div class="products sp-products">
                 <div class="container">
                     <div class="row">
-                        <!-- START SINGLE PRODUCT -->
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                            <div class="product sale">
-                                <div class="product__thumb">
-                                    <img src="images/products/1.png" alt="single product">
-                                </div>
-                                <a href="single-product.html" class="product-buy"><i class="fa fa-opencart"></i></a>
-                                <div class="product__content">
-                                    <div class="product__content__inner">
-                                        <h5><a href="single-product.html">Fishing Reel</a></h5>
-                                        <span class="price">$135.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!-- END SINGLE PRODUCT -->
+                        @foreach($products as $product)
                         <!-- START SINGLE PRODUCT -->
                         <div class="col-lg-3 col-md-4 col-sm-6 col-12">
                             <div class="product">
                                 <div class="product__thumb">
-                                    <img src="images/products/2.png" alt="single product">
+                                    <img src="{{ '/images/'.$product->product_image }}" alt="single product">
                                 </div>
-                                <a href="single-product.html" class="product-buy"><i class="fa fa-opencart"></i></a>
+                                <a href="single-product.html" class="product-buy"><i class="fa fa-shopping-basket"></i></a>
                                 <div class="product__content">
                                     <div class="product__content__inner">
-                                        <h5><a href="single-product.html">Fishing Reel</a></h5>
-                                        <span class="price">$135.00</span>
+                                        @php
+                                            $link_product = str_slug($product->product_name_en, '_')
+                                        @endphp
+                                        <h5><a href="{{ url('/product/'.$product->id.'/'.$link_product) }}">{{ $product->product_name_az }}</a></h5>
+                                        <span class="price">{{ $product->price }}</span>
                                     </div>
                                 </div>
                             </div>
                         </div><!-- END SINGLE PRODUCT -->
-                        <!-- START SINGLE PRODUCT -->
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                            <div class="product">
-                                <div class="product__thumb">
-                                    <img src="images/products/3.png" alt="single product">
-                                </div>
-                                <a href="single-product.html" class="product-buy"><i class="fa fa-opencart"></i></a>
-                                <div class="product__content">
-                                    <div class="product__content__inner">
-                                        <h5><a href="single-product.html">Fishing Reel</a></h5>
-                                        <span class="price">$135.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!-- END SINGLE PRODUCT -->
-                        <!-- START SINGLE PRODUCT -->
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                            <div class="product">
-                                <div class="product__thumb">
-                                    <img src="images/products/4.png" alt="single product">
-                                </div>
-                                <a href="single-product.html" class="product-buy"><i class="fa fa-opencart"></i></a>
-                                <div class="product__content">
-                                    <div class="product__content__inner">
-                                        <h5><a href="single-product.html">Fishing Reel</a></h5>
-                                        <span class="price">$135.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!-- END SINGLE PRODUCT -->
-                        <!-- START SINGLE PRODUCT -->
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                            <div class="product sale">
-                                <div class="product__thumb">
-                                    <img src="images/products/5.png" alt="single product">
-                                </div>
-                                <a href="single-product.html" class="product-buy"><i class="fa fa-opencart"></i></a>
-                                <div class="product__content">
-                                    <div class="product__content__inner">
-                                        <h5><a href="single-product.html">Fishing Reel</a></h5>
-                                        <span class="price">$135.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!-- END SINGLE PRODUCT -->
-                        <!-- START SINGLE PRODUCT -->
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                            <div class="product">
-                                <div class="product__thumb">
-                                    <img src="images/products/6.png" alt="single product">
-                                </div>
-                                <a href="single-product.html" class="product-buy"><i class="fa fa-opencart"></i></a>
-                                <div class="product__content">
-                                    <div class="product__content__inner">
-                                        <h5><a href="single-product.html">Fishing Reel</a></h5>
-                                        <span class="price">$135.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!-- END SINGLE PRODUCT -->
-                        <!-- START SINGLE PRODUCT -->
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                            <div class="product">
-                                <div class="product__thumb">
-                                    <img src="images/products/7.png" alt="single product">
-                                </div>
-                                <a href="single-product.html" class="product-buy"><i class="fa fa-opencart"></i></a>
-                                <div class="product__content">
-                                    <div class="product__content__inner">
-                                        <h5><a href="single-product.html">Fishing Reel</a></h5>
-                                        <span class="price">$135.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!-- END SINGLE PRODUCT -->
-                        <!-- START SINGLE PRODUCT -->
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                            <div class="product new">
-                                <div class="product__thumb">
-                                    <img src="images/products/8.png" alt="single product">
-                                </div>
-                                <a href="single-product.html" class="product-buy"><i class="fa fa-opencart"></i></a>
-                                <div class="product__content">
-                                    <div class="product__content__inner">
-                                        <h5><a href="single-product.html">Fishing Reel</a></h5>
-                                        <span class="price">$135.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!-- END SINGLE PRODUCT -->
-                        <!-- START SINGLE PRODUCT -->
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                            <div class="product">
-                                <div class="product__thumb">
-                                    <img src="images/products/9.png" alt="single product">
-                                </div>
-                                <a href="single-product.html" class="product-buy"><i class="fa fa-opencart"></i></a>
-                                <div class="product__content">
-                                    <div class="product__content__inner">
-                                        <h5><a href="single-product.html">Fishing Reel</a></h5>
-                                        <span class="price">$135.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!-- END SINGLE PRODUCT -->
-                        <!-- START SINGLE PRODUCT -->
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                            <div class="product new">
-                                <div class="product__thumb">
-                                    <img src="images/products/10.png" alt="single product">
-                                </div>
-                                <a href="single-product.html" class="product-buy"><i class="fa fa-opencart"></i></a>
-                                <div class="product__content">
-                                    <div class="product__content__inner">
-                                        <h5><a href="single-product.html">Fishing Reel</a></h5>
-                                        <span class="price">$135.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!-- END SINGLE PRODUCT -->
-                        <!-- START SINGLE PRODUCT -->
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                            <div class="product stock--out">
-                                <div class="product__thumb">
-                                    <img src="images/products/11.png" alt="single product">
-                                </div>
-                                <a href="single-product.html" class="product-buy"><i class="fa fa-opencart"></i></a>
-                                <div class="product__content">
-                                    <div class="product__content__inner">
-                                        <h5><a href="single-product.html">Fishing Reel</a></h5>
-                                        <span class="price">$135.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!-- END SINGLE PRODUCT -->
-                        <!-- START SINGLE PRODUCT -->
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                            <div class="product">
-                                <div class="product__thumb">
-                                    <img src="images/products/12.png" alt="single product">
-                                </div>
-                                <a href="single-product.html" class="product-buy"><i class="fa fa-opencart"></i></a>
-                                <div class="product__content">
-                                    <div class="product__content__inner">
-                                        <h5><a href="single-product.html">Fishing Reel</a></h5>
-                                        <span class="price">$135.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!-- END SINGLE PRODUCT -->
+                        @endforeach
                     </div>
                     <!-- START PAGINATION -->
                     <div class="row">

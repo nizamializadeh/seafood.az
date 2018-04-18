@@ -3968,6 +3968,24 @@ ul.ratings li:last-child {
 .product-action ul li {
     display: inline-block;
     margin-right: 8px; }
+.product-action ul li button{
+    border-radius: 0px;
+    background: none;
+    border: 1px solid #eeeeee;
+    height: 37px;
+    display: inline-block;
+    font-size: 15px;
+    color: #c5c4c4;
+    text-transform: uppercase;
+}
+.product-action ul li button:hover{
+    border-color: #44c3cf;
+    background: #44c3cf;
+    color: #ffffff;
+}
+.product-action ul li button .icon{
+    margin-left: 5px;
+}
 .product-action ul li a {
     border: 1px solid #eeeeee;
     line-height: 37px;
