@@ -11,9 +11,9 @@
 |
 */
 Auth::routes();
-Route::get('login',function (){
-    return redirect(route('index'));
-})->name('login');
+//Route::get('login',function (){
+//    return redirect(route('index'));
+//})->name('login');
 Route::get('/', 'Frontend\IndexController@index')->name('index');
 Route::get('/aboutus', 'Frontend\IndexController@about');
 Route::get('/services', 'Frontend\IndexController@services');

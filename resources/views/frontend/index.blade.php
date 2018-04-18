@@ -118,26 +118,30 @@
                     @if (Auth::guest())
                     <li><a class="login-from-trigger" href=""><i class="fa fa-user-o"></i></a></li>
                     @else
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" href="" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-user-o"></i></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li>
-                                    <a href="">Profile</a>
-                                </li>
-                                <li>
 
-                                    <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                      Logout
-                                    </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        {{ csrf_field() }}
-                                    </form>
-                                </li>
-                            </ul>
+                        <li><a href=""><i class="fa fa-user-o"></i></a>
+                            <div class="minicart">
+                                <div class="minicart__products">
+                                    <div class="single-product">
+
+                                        <div class="single-product__content">
+                                            <a href="{{ url('/user/profile') }}"><i class="fa fa-chevron-right"></i>&nbsp Profile</a>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                    <div class="minicart__buttons d-flex justify-content-between">
+                                        <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();" class="cr-btn">Logout</a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                    </div>
+                            </div>
                         </li>
-
                         @endif
                     <li class="hidden-md"><a class="cr-btn cr-btn--theme cr-btn--sm cr-round cr-round--lg" href="index-2.html#"><span>Buy now</span></a></li>
                 </ul>
@@ -260,38 +264,51 @@
                                                 </span>
                                 @endif
                     </div>
-                    <div class="single-input">
-                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                    </div>
+                    {{--<div class="single-input">--}}
+                        {{--<label for="">--}}
+                            {{--<input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> <span>Remember Me</span>--}}
+                        {{--</label>--}}
+                    {{--</div>--}}
                     <div class="single-input">
                         <button type="submit" class="cr-btn cr-btn--sm cr-btn--theme cr-round cr-round--lg"><span>Go</span></button>
-                    </div>
-                    <div class="sif-login__others">
-                        <h6>Or login with</h6>
-                        <div class="social-icons social-icons--rounded">
-                            <ul>
-                                <li class="facebook"><a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
-                                <li class="twitter"><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
-                                <li class="pinterest"><a href="index-2.html#"><i class="fa fa-google-plus"></i></a></li>
-                            </ul>
-                        </div>
                     </div>
                 </form>
             </div>
             <div class="sif__register">
                 <h3 class="sif-title">Create new account</h3>
-                <form action="#">
-                    <div class="single-input">
-                        <input type="text" placeholder="User name" class="cr-round cr-round--lg">
+
+                <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
+                    {{ csrf_field() }}
+
+                    <div class="single-input{{ $errors->has('name') ? ' has-error' : '' }}">
+                        <input id="name" type="text" name="name" placeholder="Full Name" class="cr-round cr-round--lg" value="{{ old('name') }}" required autofocus>
+                        @if ($errors->has('name'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                        @endif
                     </div>
-                    <div class="single-input">
-                        <input type="email" placeholder="Email address" class="cr-round cr-round--lg">
+
+                    <div class="single-input{{ $errors->has('email') ? ' has-error' : '' }}">
+                        <input id="email" type="email" placeholder="Email address" class="cr-round cr-round--lg" name="email" value="{{ old('email') }}" required>
+                        @if ($errors->has('email'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                        @endif
                     </div>
-                    <div class="single-input">
-                        <input type="password" placeholder="Password" class="cr-round cr-round--lg">
+
+                    <div class="single-input{{ $errors->has('password') ? ' has-error' : '' }}">
+                        <input id="password" type="password" placeholder="Password" class="cr-round cr-round--lg" name="password" required>
+                        @if ($errors->has('password'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                        @endif
                     </div>
+
                     <div class="single-input">
-                        <input type="password" placeholder="Confirm password" class="cr-round cr-round--lg">
+                        <input id="password-confirm" type="password" placeholder="Confirm password" class="cr-round cr-round--lg" name="password_confirmation" required>
                     </div>
                     <div class="single-input">
                         <button type="submit" class="cr-btn cr-btn--sm cr-btn--theme cr-round cr-round--lg"><span>Sign Up</span></button>
