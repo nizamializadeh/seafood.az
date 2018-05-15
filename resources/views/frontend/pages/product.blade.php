@@ -1,43 +1,43 @@
 @extends('frontend.index')
 @section('breadcamb')
     <!-- START BREADCAMB AREA -->
-    <div class="breadcamb">
-        <div class="breadcamb__name ptb--150 bg--1" data-black-overlay="5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="breadcamb__inner text-center">
-                            <h2>Visit our shop</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="breadcamb__tree bg--pattern ptb--20">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                        <div class="breadcamb__tree__inner">
-                            <ul>
-                                <li><a href="single-product.html#">Home</a></li>
-                                <li>Shop</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                        <div class="breadcamb__tree__social social-icons social-icons--rounded text-right">
-                            <ul>
-                                <li class="facebook"><a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
-                                <li class="twitter"><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
-                                <li class="instagram"><a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a></li>
-                                <li class="google-plus"><a href="https://plus.google.com/discover"><i class="fa fa-google-plus"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><!-- END BREADCAMB AREA -->
+    {{--<div class="breadcamb">--}}
+        {{--<div class="breadcamb__name ptb--150 bg--1" data-black-overlay="5">--}}
+            {{--<div class="container">--}}
+                {{--<div class="row">--}}
+                    {{--<div class="col-lg-12">--}}
+                        {{--<div class="breadcamb__inner text-center">--}}
+                            {{--<h2>Visit our shop</h2>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+        {{--<div class="breadcamb__tree bg--pattern ptb--20">--}}
+            {{--<div class="container">--}}
+                {{--<div class="row align-items-center">--}}
+                    {{--<div class="col-lg-6 col-md-6 col-sm-6 col-12">--}}
+                        {{--<div class="breadcamb__tree__inner">--}}
+                            {{--<ul>--}}
+                                {{--<li><a href="single-product.html#">Home</a></li>--}}
+                                {{--<li>Shop</li>--}}
+                            {{--</ul>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                    {{--<div class="col-lg-6 col-md-6 col-sm-6 col-12">--}}
+                        {{--<div class="breadcamb__tree__social social-icons social-icons--rounded text-right">--}}
+                            {{--<ul>--}}
+                                {{--<li class="facebook"><a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>--}}
+                                {{--<li class="twitter"><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>--}}
+                                {{--<li class="instagram"><a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a></li>--}}
+                                {{--<li class="google-plus"><a href="https://plus.google.com/discover"><i class="fa fa-google-plus"></i></a></li>--}}
+                            {{--</ul>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div><!-- END BREADCAMB AREA -->--}}
     @endsection
 
 @section('content')
@@ -59,12 +59,12 @@
                                         <a class="spi-image-popup tab-pane fade show active" href="{{ '/images/'.$product->product_image }}" target="_blank" id="product-image-1">
                                             <img src="{{ '/images/'.$product->product_image }}" alt="single product thumb">
                                         </a>
-                                        <a class="spi-image-popup tab-pane fade" id="product-image-2" href="images/single-product/large/2.jpg">
-                                            <img src="images/single-product/medium/2.jpg" alt="single product thumb">
-                                        </a>
-                                        <a class="spi-image-popup tab-pane fade" id="product-image-3" href="images/single-product/large/3.jpg">
-                                            <img src="images/single-product/medium/3.jpg" alt="single product thumb">
-                                        </a>
+                                        {{--<a class="spi-image-popup tab-pane fade" id="product-image-2" href="images/single-product/large/2.jpg">--}}
+                                            {{--<img src="images/single-product/medium/2.jpg" alt="single product thumb">--}}
+                                        {{--</a>--}}
+                                        {{--<a class="spi-image-popup tab-pane fade" id="product-image-3" href="images/single-product/large/3.jpg">--}}
+                                            {{--<img src="images/single-product/medium/3.jpg" alt="single product thumb">--}}
+                                        {{--</a>--}}
                                     </div><!-- END SINGLE PRODUCT LEFT INFO -->
 
                                     <!-- START SINGLE PRODUCT RIGHT INFO -->
@@ -85,30 +85,31 @@
                                             </div>
                                         </div>
                                         <p>{{ $product->product_details_az }}</p>
+                                        <form action="{{ url('/cart-post') }}" method="POST">
+                                            {{ csrf_field() }}
                                         <div class="spi-units">
-
                                             <div class="spi-units__single unit-quantity">
                                                 <h5 class="spi-title">Quantity :</h5>
                                                 <div class="cart-plus-minus">
-                                                    <input type="text" value="02" name="qtybutton" class="cart-plus-minus-box">
+                                                    <input type="text" min="1" value="" name="quantity" class="cart-plus-minus-box">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="product-action">
                                             <ul>
                                                 <li>
-                                                    <form action="{{ url('/cart-post') }}" method="POST">
-                                                        {{ csrf_field() }}
+
 
                                                         <input type="hidden" name="id" value="{{ $product->id }}">
                                                         <input type="hidden" name="name" value="{{ $product->product_name_az }}">
-                                                        <input type="hidden" name="price" value="{{ $product->precent }}">
+                                                        <input type="hidden" name="price" value="{{ $product->price }}">
                                                         <button type="submit" class="btn"><span class="text">add to cart</span> <span class="icon"><i class="fa fa-shopping-basket"></i></span></button>
-                                                    </form>
+
                                                 </li>
                                                 <li><a href="single-product.html#"><span class="icon"><i class="fa fa-heart-o"></i></span></a></li>
                                             </ul>
                                         </div>
+                                        </form>
                                         <div class="spi__tab-trigger nav" role="tablist">
                                             <a data-toggle="tab" href="single-product.html#product-image-1">
                                                 <img src="{{ url('images/single-product/small/2.jpg') }}" alt="single image">

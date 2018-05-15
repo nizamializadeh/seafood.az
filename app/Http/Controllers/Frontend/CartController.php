@@ -12,13 +12,9 @@ class CartController extends Controller
     }
 
     public function store(Request $request){
-        Cart::add($request->id, $request->name, 1, $request->price)->associate('App\Product');
+        Cart::add($request->id, $request->name, $request->quantity, $request->price)->associate('App\Product');
         return redirect('/cart')->with('success_message', 'Item was add to your cart');
     }
-
-//    public function empty(){
-//        Cart::destroy();
-//    }
 
     public function destroy($id){
         Cart::remove($id);

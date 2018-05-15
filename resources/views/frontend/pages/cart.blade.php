@@ -42,11 +42,9 @@
                                     {{--<td><span class="cart-number">1</span></td>--}}
                                     <td><a href="{{ url('/product/'.$item->id.'/'.$link_product) }}" class="cart-pro-image"><img src="{{ '/images/'.$item->model->product_image }}" alt="" /></a></td>
                                     <td><a href="{{ url('/product/'.$item->id.'/'.$link_product) }}" class="cart-pro-title">{{ $item->model->product_name_az }}</a></td>
-                                    <td><div class="product-quantity">
-                                            <input type="text" value="0" name="qtybox">
-                                        </div></td>
-                                    <td><p class="cart-pro-price">{{ $item->model->price }}</p></td>
-                                    <td><p class="cart-price-total">$104.99</p></td>
+                                    <td><p class="cart-pro-price">{{ $item->qty  }} X</p></td>
+                                    <td><p class="cart-pro-price">{{ $item->model->price }} AZN</p></td>
+                                    <td><p class="cart-price-total">{{ Cart::subtotal() }} AZN</p></td>
                                     <td>
                                         <form action="{{ route('cart.destroy', $item->rowId) }}" method="POST">
                                             {{ csrf_field() }}

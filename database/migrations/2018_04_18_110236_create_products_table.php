@@ -25,7 +25,7 @@ class CreateProductsTable extends Migration
             $table->text('product_desc_en');
             $table->text('product_desc_ru');
             $table->string('product_image');
-            $table->integer('price');
+            $table->float('price');
             $table->integer('product_cat_id')->unsigned()->index();
             $table->foreign('product_cat_id')->references('id')->on('product__categories')->onDelete('cascade');
             $table->timestamps();
