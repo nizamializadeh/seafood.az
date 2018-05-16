@@ -101,11 +101,10 @@
                             @endif
                         </div>
                     </li>
+
                     @if (Auth::guest())
                     <li><a class="login-from-trigger" href=""><i class="fa fa-user-o"></i></a></li>
                     @else
-
-
                         <li><a href=""><i class="fa fa-user-o"></i></a>
                             <div class="minicart">
                                 <div class="minicart__products">
@@ -129,7 +128,16 @@
                             </div>
                         </li>
                         @endif
-                    <li class="hidden-md"><a class="cr-btn cr-btn--theme cr-btn--sm cr-round cr-round--lg" href="index-2.html#"><span>Buy now</span></a></li>
+
+                    <li><a href=""><i class="fa fa-globe"></i></a>
+                        <div class="minicart">
+                            <ul>
+                                <li><a href="">AZE</a></li>
+                                <li><a href="">AZE</a></li>
+                                <li><a href="">AZE</a></li>
+                            </ul>
+                        </div>
+                    </li>
                 </ul>
             </div>
             <div class="mobile-menu hidden-lg hidden-xlg hidden-xx hidden-sp">
@@ -303,13 +311,8 @@
             </div>
             <span class="sif-close-button"><i class="fa fa-close"></i></span>
         </div>
-
     @else
-
     @endif
-
-
-
     </div><!-- END SINGN IN FORM -->
 
 
