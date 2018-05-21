@@ -46,7 +46,7 @@
             </div>
             <nav class="header__menu">
                 <ul>
-                    <li><a href="{{ url('/') }}">HOME</a></li>
+                    <li><a href="{{ url('/') }}">{{ Lang::get('navbar.home') }}</a></li>
                     <li><a href="{{ url('/aboutus') }}">ABOUT</a></li>
                     <li><a href="{{ url('/services') }}">Service</a></li>
                     <li><a href="{{ url('/shop') }}">SHOP</a></li>
@@ -57,50 +57,50 @@
             </nav>
             <div class="header__side__icons">
                 <ul class="nav">
-                    <li><a href="shop-right-sidebar.html"><i class="fa fa-shopping-basket"></i> @if(Cart::instance('default')->count() > 0) <span class="shop-items">{{ Cart::instance('default')->count() }}</span> @endif</a>
-                        <div class="minicart">
-                            <div class="minicart__products">
-                                @if(Cart::count() > 0)
-                                    @foreach(Cart::content() as $item)
-                                        @php
-                                            $link_product = str_slug($item->model->product_name_en, '_')
-                                        @endphp
-                                            <div class="single-product">
-                                                <div class="single-product__thumb">
-                                                    <a href="{{ url('/product/'.$item->id.'/'.$link_product) }}">
-                                                        <img src="{{ '/images/'.$item->model->product_image }}" alt="single product">
-                                                    </a>
-                                                </div>
-                                                <div class="single-product__content">
-                                                    <a href="{{ url('/product/'.$item->id.'/'.$link_product) }}">{{ $item->model->product_name_az }}</a>
-                                                    <p>{{ $item->model->price }} <span>X</span> 1</p>
-                                                </div>
-                                                <div class="single-product__close">
-                                                    <form action="{{ route('cart.destroy', $item->rowId) }}" method="POST">
-                                                        {{ csrf_field() }}
-                                                        {{ method_field('DELETE') }}
-                                                        <button type="submit" class="minicart-product-close"><i class="fa fa-trash-o"></i></button>
-                                                    </form>
-                                                </div>
+                    {{--<li><a href="shop-right-sidebar.html"><i class="fa fa-shopping-basket"></i> @if(Cart::instance('default')->count() > 0) <span class="shop-items">{{ Cart::instance('default')->count() }}</span> @endif</a>--}}
+                        {{--<div class="minicart">--}}
+                            {{--<div class="minicart__products">--}}
+                                {{--@if(Cart::count() > 0)--}}
+                                    {{--@foreach(Cart::content() as $item)--}}
+                                        {{--@php--}}
+                                            {{--$link_product = str_slug($item->model->product_name_en, '_')--}}
+                                        {{--@endphp--}}
+                                            {{--<div class="single-product">--}}
+                                                {{--<div class="single-product__thumb">--}}
+                                                    {{--<a href="{{ url('/product/'.$item->id.'/'.$link_product) }}">--}}
+                                                        {{--<img src="{{ '/images/'.$item->model->product_image }}" alt="single product">--}}
+                                                    {{--</a>--}}
+                                                {{--</div>--}}
+                                                {{--<div class="single-product__content">--}}
+                                                    {{--<a href="{{ url('/product/'.$item->id.'/'.$link_product) }}">{{ $item->model->product_name_az }}</a>--}}
+                                                    {{--<p>{{ $item->model->price }} <span>X</span> 1</p>--}}
+                                                {{--</div>--}}
+                                                {{--<div class="single-product__close">--}}
+                                                    {{--<form action="{{ route('cart.destroy', $item->rowId) }}" method="POST">--}}
+                                                        {{--{{ csrf_field() }}--}}
+                                                        {{--{{ method_field('DELETE') }}--}}
+                                                        {{--<button type="submit" class="minicart-product-close"><i class="fa fa-trash-o"></i></button>--}}
+                                                    {{--</form>--}}
+                                                {{--</div>--}}
 
-                                            </div>
-                                    @endforeach
-                            </div>
-                            <div class="minicart__bottom">
-                                <div class="total-price d-flex justify-content-between">
-                                    <span>Subtotal:</span>
-                                    <span>$600</span>
-                                </div>
-                                <div class="minicart__buttons d-flex justify-content-between">
-                                    <a href="{{ url('/cart') }}" class="cr-btn cr-btn--xs">View Cart</a>
-                                    <a href="checkout.html" class="cr-btn cr-btn--xs">Checkout</a>
-                                </div>
-                            </div>
-                            @else
-                            No items in cart
-                            @endif
-                        </div>
-                    </li>
+                                            {{--</div>--}}
+                                    {{--@endforeach--}}
+                            {{--</div>--}}
+                            {{--<div class="minicart__bottom">--}}
+                                {{--<div class="total-price d-flex justify-content-between">--}}
+                                    {{--<span>Subtotal:</span>--}}
+                                    {{--<span>$600</span>--}}
+                                {{--</div>--}}
+                                {{--<div class="minicart__buttons d-flex justify-content-between">--}}
+                                    {{--<a href="{{ url('/cart') }}" class="cr-btn cr-btn--xs">View Cart</a>--}}
+                                    {{--<a href="checkout.html" class="cr-btn cr-btn--xs">Checkout</a>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                            {{--@else--}}
+                            {{--No items in cart--}}
+                            {{--@endif--}}
+                        {{--</div>--}}
+                    {{--</li>--}}
 
                     @if (Auth::guest())
                     <li><a class="login-from-trigger" href=""><i class="fa fa-user-o"></i></a></li>
@@ -131,11 +131,23 @@
 
                     <li><a href=""><i class="fa fa-globe"></i></a>
                         <div class="minicart">
-                            <ul>
-                                <li><a href="">AZE</a></li>
-                                <li><a href="">AZE</a></li>
-                                <li><a href="">AZE</a></li>
-                            </ul>
+                            <div class="minicart__products">
+                                <div class="single-product">
+                                    <div class="single-product__thumb">
+                                        <a href="{{url('lang/az')}}">AZE</a>
+                                    </div>
+                                </div>
+                                <div class="single-product">
+                                    <div class="single-product__thumb">
+                                        <a href="{{url('lang/en')}}">ENG</a>
+                                    </div>
+                                </div><div class="single-product">
+                                    <div class="single-product__thumb">
+                                        <a href="{{url('lang/ru')}}">RUS</a>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </li>
                 </ul>

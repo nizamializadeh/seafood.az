@@ -23,6 +23,7 @@ Route::get('/blogs', 'Frontend\IndexController@blogs');
 Route::get('/singleblog', 'Frontend\IndexController@singleblog');
 Route::get('/camps', 'Frontend\IndexController@camps');
 Route::get('/cart', 'Frontend\CartController@index');
+Route::get('/lang/{lang}', 'LangController@index');
 Route::post('/cart-post', 'Frontend\CartController@store');
 Route::get('/empty', function (){
     Cart::destroy();
