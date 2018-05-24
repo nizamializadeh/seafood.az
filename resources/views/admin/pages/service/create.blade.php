@@ -33,19 +33,19 @@
                         <div class="form-group">
                             <label class="col-md-12">Description AZE</label>
                             <div class="col-md-12">
-                                <textarea rows="5" name="desc_az" class="form-control summernote form-control-line"></textarea>
+                                <textarea rows="5" name="desc_az" class="form-control  form-control-line"></textarea>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-12">Description ENG</label>
                             <div class="col-md-12">
-                                <textarea rows="5" name="desc_en" class="form-control summernote form-control-line"></textarea>
+                                <textarea rows="5" name="desc_en" class="form-control  form-control-line"></textarea>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-12">Description RUS</label>
                             <div class="col-md-12">
-                                <textarea rows="5" name="desc_ru" class="form-control summernote form-control-line"></textarea>
+                                <textarea rows="5" name="desc_ru" class="form-control  form-control-line"></textarea>
                             </div>
                         </div>
 

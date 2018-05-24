@@ -44,21 +44,21 @@
                             <div class="form-group">
                                 <label class="col-md-12">Description AZE</label>
                                 <div class="col-md-12">
-                                    <textarea rows="5" name="desc_az" class=" summernote form-control form-control-line"> {{ $slider->slider_desc_az }}</textarea>
+                                    <textarea rows="5" name="desc_az" class="  form-control form-control-line"> {{ $slider->slider_desc_az }}</textarea>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="col-md-12">Text ENG</label>
                                 <div class="col-md-12">
-                                    <textarea rows="5" name="desc_en" class="summernote form-control form-control-line"> {{ $slider->slider_desc_en }}</textarea>
+                                    <textarea rows="5" name="desc_en" class=" form-control form-control-line"> {{ $slider->slider_desc_en }}</textarea>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="col-md-12">Text RUS</label>
                                 <div class="col-md-12">
-                                    <textarea rows="5" name="desc_ru"  class="summernote form-control form-control-line"> {{ $slider->slider_desc_ru }}</textarea>
+                                    <textarea rows="5" name="desc_ru"  class=" form-control form-control-line"> {{ $slider->slider_desc_ru }}</textarea>
                                 </div>
                             </div>
 

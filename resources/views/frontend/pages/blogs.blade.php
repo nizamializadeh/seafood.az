@@ -1,4 +1,17 @@
 @extends('frontend.index');
+@php
+    $about_title = 'title_'.app()->getLocale();
+    $about_text = 'text_'.app()->getLocale();
+    $slider_title = 'slider_title_'.app()->getLocale();
+    $slider_desc = 'slider_desc_'.app()->getLocale();
+    $feature_name = 'name_'.app()->getLocale();
+    $feature_desc = 'desc_'.app()->getLocale();
+    $serv_title = 'serv_title_'.app()->getLocale();
+    $product_name = 'product_name_'.app()->getLocale();
+    $blog_title = 'blog_title_'.app()->getLocale();
+    $blog_text = 'blog_text_'.app()->getLocale();
+    $cat_name = 'blog_cat_name_'.app()->getLocale();
+@endphp
 @section('breadcamb')
     <!-- START BREADCAMB AREA -->
     <div class="breadcamb">
@@ -48,216 +61,37 @@
         <div class="blog-grid-area ptb--150 bg--white">
             <div class="container">
                 <div class="row">
+
                     <div class="col-md-12">
                         <div class="blog-grid">
                             <div class="row">
+                                @foreach($blogs as $blog)
+                                    @php
+                                        $link_blog = str_slug($blog->blog_title_en, '-')
+                                    @endphp
                                 <!-- START SINGLE BLOG -->
                                 <div class="col-lg-4">
                                     <article class="blog blog--style-2">
                                         <div class="blog__thumb">
                                             <div class="blog__thumb__inner">
-                                                <img src="images/blog/layout-2/1.jpg" alt="blog thumb">
+                                                <img src="{{ url('/images/'.$blog->blog_image) }}" alt="blog {{ $blog->blog_title_en }}">
                                             </div>
                                             <div class="blog__sidecontent">
                                                 <ul>
                                                     <li>25<span>Sep</span></li>
                                                     <li>Views<span>75</span></li>
-                                                    <li>Likes<span>25</span></li>
                                                 </ul>
                                             </div>
                                         </div>
                                         <div class="blog__content">
                                             <div class="blog__content__details">
-                                                <h5><a href="single-blog.html">Fshign is simple but it refresh your mind and health also</a></h5>
+                                                <h5><a href="{{ url('/blog/'.$blog->id.'/'.$link_blog) }}">{{ $blog->$blog_title }}</a></h5>
                                                 <p>Lets do better design was born and I will lete account of the tem, and pund  actual achings of the great explorer use sme special</p>
                                             </div>
                                         </div>
                                     </article>
                                 </div><!-- END SINGLE BLOG -->
-                                <!-- START SINGLE BLOG -->
-                                <div class="col-lg-4">
-                                    <article class="blog blog--style-2">
-                                        <div class="blog__thumb">
-                                            <div class="blog__thumb__inner">
-                                                <img src="images/blog/layout-2/2.jpg" alt="blog thumb">
-                                            </div>
-                                            <div class="blog__sidecontent">
-                                                <ul>
-                                                    <li>25<span>Sep</span></li>
-                                                    <li>Views<span>75</span></li>
-                                                    <li>Likes<span>25</span></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="blog__content">
-                                            <div class="blog__content__details">
-                                                <h5><a href="blog-grid.html#">Family tour for fishing more enjoy more fishing more refresh</a></h5>
-                                                <p>Lets do better design was born and I will lete account of the tem, and pund  actual achings of the great explorer use sme special</p>
-                                            </div>
-                                        </div>
-                                    </article>
-                                </div><!-- END SINGLE BLOG -->
-                                <!-- START SINGLE BLOG -->
-                                <div class="col-lg-4">
-                                    <article class="blog blog--style-2">
-                                        <div class="blog__thumb">
-                                            <div class="blog__thumb__inner">
-                                                <img src="images/blog/layout-2/3.jpg" alt="blog thumb">
-                                            </div>
-                                            <div class="blog__sidecontent">
-                                                <ul>
-                                                    <li>22<span>Sep</span></li>
-                                                    <li>Views<span>75</span></li>
-                                                    <li>Likes<span>25</span></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="blog__content">
-                                            <div class="blog__content__details">
-                                                <h5><a href="blog-grid.html#">Let’s join a fishing compitition and win pirze’s & Trip’s</a></h5>
-                                                <p>Lets do better design was born and I will lete account of the tem, and pund  actual achings of the great explorer use sme special</p>
-                                            </div>
-                                        </div>
-                                    </article>
-                                </div><!-- END SINGLE BLOG -->
-                                <!-- START SINGLE BLOG -->
-                                <div class="col-lg-4">
-                                    <article class="blog blog--style-2">
-                                        <div class="blog__thumb">
-                                            <div class="blog__thumb__inner">
-                                                <img src="https://devitems.com/preview/nailsboat/nailsboat/images/blog/layout-2/4.jpg" alt="blog thumb">
-                                            </div>
-                                            <div class="blog__sidecontent">
-                                                <ul>
-                                                    <li>20<span>Sep</span></li>
-                                                    <li>Views<span>75</span></li>
-                                                    <li>Likes<span>25</span></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="blog__content">
-                                            <div class="blog__content__details">
-                                                <h5><a href="single-blog.html">Fshign is simple but it refresh your mind and health also</a></h5>
-                                                <p>Lets do better design was born and I will lete account of the tem, and pund  actual achings of the great explorer use sme special</p>
-                                            </div>
-                                        </div>
-                                    </article>
-                                </div><!-- END SINGLE BLOG -->
-                                <!-- START SINGLE BLOG -->
-                                <div class="col-lg-4">
-                                    <article class="blog blog--style-2">
-                                        <div class="blog__thumb">
-                                            <div class="blog__thumb__inner">
-                                                <img src="https://devitems.com/preview/nailsboat/nailsboat/images/blog/layout-2/5.jpg" alt="blog thumb">
-                                            </div>
-                                            <div class="blog__sidecontent">
-                                                <ul>
-                                                    <li>18<span>Sep</span></li>
-                                                    <li>Views<span>75</span></li>
-                                                    <li>Likes<span>25</span></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="blog__content">
-                                            <div class="blog__content__details">
-                                                <h5><a href="blog-grid.html#">Make a trip for fishing in the sea and enjoy a lot</a></h5>
-                                                <p>Lets do better design was born and I will lete account of the tem, and pund  actual achings of the great explorer use sme special</p>
-                                            </div>
-                                        </div>
-                                    </article>
-                                </div><!-- END SINGLE BLOG -->
-                                <!-- START SINGLE BLOG -->
-                                <div class="col-lg-4">
-                                    <article class="blog blog--style-2">
-                                        <div class="blog__thumb">
-                                            <div class="blog__thumb__inner">
-                                                <img src="https://devitems.com/preview/nailsboat/nailsboat/images/blog/layout-2/6.jpg" alt="blog thumb">
-                                            </div>
-                                            <div class="blog__sidecontent">
-                                                <ul>
-                                                    <li>16<span>Sep</span></li>
-                                                    <li>Views<span>75</span></li>
-                                                    <li>Likes<span>25</span></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="blog__content">
-                                            <div class="blog__content__details">
-                                                <h5><a href="blog-grid.html#">Nail’s boat make’s trip for catching fish for a month long</a></h5>
-                                                <p>Lets do better design was born and I will lete account of the tem, and pund  actual achings of the great explorer use sme special</p>
-                                            </div>
-                                        </div>
-                                    </article>
-                                </div><!-- END SINGLE BLOG -->
-                                <!-- START SINGLE BLOG -->
-                                <div class="col-lg-4">
-                                    <article class="blog blog--style-2">
-                                        <div class="blog__thumb">
-                                            <div class="blog__thumb__inner">
-                                                <img src="https://devitems.com/preview/nailsboat/nailsboat/images/blog/layout-2/7.jpg" alt="blog thumb">
-                                            </div>
-                                            <div class="blog__sidecontent">
-                                                <ul>
-                                                    <li>14<span>Sep</span></li>
-                                                    <li>Views<span>75</span></li>
-                                                    <li>Likes<span>25</span></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="blog__content">
-                                            <div class="blog__content__details">
-                                                <h5><a href="single-blog.html">Fshign is simple but it refresh your mind and health also</a></h5>
-                                                <p>Lets do better design was born and I will lete account of the tem, and pund  actual achings of the great explorer use sme special</p>
-                                            </div>
-                                        </div>
-                                    </article>
-                                </div><!-- END SINGLE BLOG -->
-                                <!-- START SINGLE BLOG -->
-                                <div class="col-lg-4">
-                                    <article class="blog blog--style-2">
-                                        <div class="blog__thumb">
-                                            <div class="blog__thumb__inner">
-                                                <img src="https://devitems.com/preview/nailsboat/nailsboat/images/blog/layout-2/8.jpg" alt="blog thumb">
-                                            </div>
-                                            <div class="blog__sidecontent">
-                                                <ul>
-                                                    <li>14<span>Sep</span></li>
-                                                    <li>Views<span>75</span></li>
-                                                    <li>Likes<span>25</span></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="blog__content">
-                                            <div class="blog__content__details">
-                                                <h5><a href="blog-grid.html#">Big tuna fish catche by the team alex and get the first prize</a></h5>
-                                                <p>Lets do better design was born and I will lete account of the tem, and pund  actual achings of the great explorer use sme special</p>
-                                            </div>
-                                        </div>
-                                    </article>
-                                </div><!-- END SINGLE BLOG -->
-                                <!-- START SINGLE BLOG -->
-                                <div class="col-lg-4">
-                                    <article class="blog blog--style-2">
-                                        <div class="blog__thumb">
-                                            <div class="blog__thumb__inner">
-                                                <img src="https://devitems.com/preview/nailsboat/nailsboat/images/blog/layout-2/9.jpg" alt="blog thumb">
-                                            </div>
-                                            <div class="blog__sidecontent">
-                                                <ul>
-                                                    <li>12<span>Sep</span></li>
-                                                    <li>Views<span>75</span></li>
-                                                    <li>Likes<span>25</span></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="blog__content">
-                                            <div class="blog__content__details">
-                                                <h5><a href="single-blog.html">Fshign is simple but it refresh your mind and health also</a></h5>
-                                                <p>Lets do better design was born and I will lete account of the tem, and pund  actual achings of the great explorer use sme special</p>
-                                            </div>
-                                        </div>
-                                    </article>
-                                </div><!-- END SINGLE BLOG -->
+                                    @endforeach
                             </div>
                             <!-- START PAGINATION -->
                             <div class="row">

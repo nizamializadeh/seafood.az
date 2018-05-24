@@ -20,7 +20,7 @@ Route::get('/services', 'Frontend\IndexController@services');
 Route::get('/shop', 'Frontend\IndexController@shop');
 Route::get('/product/{id}/{name}', 'Frontend\IndexController@product');
 Route::get('/blogs', 'Frontend\IndexController@blogs');
-Route::get('/singleblog', 'Frontend\IndexController@singleblog');
+Route::get('/blog/{id}/{name}', 'Frontend\IndexController@singleblog');
 Route::get('/camps', 'Frontend\IndexController@camps');
 Route::get('/cart', 'Frontend\CartController@index');
 Route::get('/lang/{lang}', 'LangController@index');
@@ -35,7 +35,7 @@ Route::group(['prefix' => 'user','middleware' => 'auth'],function (){
 });
 
 
-Route::get('/home', 'HomeController@index');
+Route::get('/home', 'Frontend\IndexController@index')->name('index');
 Route::get('/users/logout', 'Auth\LoginController@userLogout')->name('user.logout');
 
 Route::prefix('admin')->group(function() {

@@ -48,7 +48,6 @@
                 <ul>
                     <li><a href="{{ url('/') }}">{{ Lang::get('navbar.home') }}</a></li>
                     <li><a href="{{ url('/aboutus') }}">ABOUT</a></li>
-                    <li><a href="{{ url('/services') }}">Service</a></li>
                     <li><a href="{{ url('/shop') }}">SHOP</a></li>
                     <li><a href="{{ url('/camps') }}">Camps</a></li>
                     <li><a href="{{ url('/blogs') }}">Blog</a></li>
@@ -103,7 +102,7 @@
                     {{--</li>--}}
 
                     @if (Auth::guest())
-                    <li><a class="login-from-trigger" href=""><i class="fa fa-user-o"></i></a></li>
+                    <li><a class="" href="{{ url('/login') }}"><i class="fa fa-user-o"></i></a></li>
                     @else
                         <li><a href=""><i class="fa fa-user-o"></i></a>
                             <div class="minicart">
@@ -164,85 +163,86 @@
     @yield('content')
 
     <!-- START FOOTER AREA -->
-    {{--<footer id="footer" class="footer fixed--footer">--}}
-        {{--<!-- START FOOTER TOPSIDE -->--}}
-        {{--<div class="footer__topside bg--grey ptb--100">--}}
-            {{--<div class="container">--}}
-                {{--<div class="row">--}}
-                    {{--<div class="col-md-12">--}}
-                        {{--<div class="ft-widget">--}}
-                            {{--<div class="ft-widget__single useful-links">--}}
-                                {{--<h5 class="ft-widget__title">Useful Links</h5>--}}
-                                {{--<ul>--}}
-                                    {{--<li><a href="about.html">About Nail’s Boat</a></li>--}}
-                                    {{--<li><a href="index-2.html#">Our Team</a></li>--}}
-                                    {{--<li><a href="index-2.html#">Testimonials</a></li>--}}
-                                    {{--<li><a href="index-2.html#">Features</a></li>--}}
-                                    {{--<li><a href="index-2.html#">Term’s & Condition’s</a></li>--}}
-                                    {{--<li><a href="contact.html">Contact</a></li>--}}
-                                {{--</ul>--}}
-                            {{--</div>--}}
-                            {{--<div class="ft-widget__single twitter-feed">--}}
-                                {{--<h5 class="ft-widget__title">Twitter Feed</h5>--}}
-                                {{--<div class="twitter-feed__single">--}}
-                                    {{--<span class="twitter-feed__icon"><i class="fa fa-twitter"></i></span>--}}
-                                    {{--<div class="twitter-feed__content">--}}
-                                        {{--<p><a href="https://twitter.com/">@Joshef Marting,</a> Fishing is very enjoyable and mind refresh</p>--}}
-                                        {{--<span class="time"><a href="https://twitter.com/">09 Min Ago</a></span>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                                {{--<div class="twitter-feed__single">--}}
-                                    {{--<span class="twitter-feed__icon"><i class="fa fa-twitter"></i></span>--}}
-                                    {{--<div class="twitter-feed__content">--}}
-                                        {{--<p><a href="https://twitter.com/">@Stuart Miler,</a> Fishing is very enjoyable and mind refresh</p>--}}
-                                        {{--<span class="time"><a href="https://twitter.com/">25 Min Ago</a></span>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                            {{--<div class="ft-widget__single flicker-feed">--}}
-                                {{--<h5 class="ft-widget__title">Flickr Stream</h5>--}}
-                                {{--<ul class="flicker-feed__images">--}}
-                                    {{--<li><a href="https://www.flickr.com/"><img src="images/flicker/1.png" alt="flicker feed"></a></li>--}}
-                                    {{--<li><a href="https://www.flickr.com/"><img src="images/flicker/2.png" alt="flicker feed"></a></li>--}}
-                                    {{--<li><a href="https://www.flickr.com/"><img src="images/flicker/3.png" alt="flicker feed"></a></li>--}}
-                                    {{--<li><a href="https://www.flickr.com/"><img src="images/flicker/4.png" alt="flicker feed"></a></li>--}}
-                                    {{--<li><a href="https://www.flickr.com/"><img src="images/flicker/5.png" alt="flicker feed"></a></li>--}}
-                                {{--</ul>--}}
-                            {{--</div>--}}
-                            {{--<div class="ft-widget__single contact-info">--}}
-                                {{--<h5 class="ft-widget__title">Contact Info</h5>--}}
-                                {{--<div class="contact-info__inner">--}}
-                                    {{--<div class="address">--}}
-                                        {{--<p>125 New Yourk, Straight Road <br> River Side Lane, USA</p>--}}
-                                    {{--</div>--}}
-                                    {{--<div class="numbers">--}}
-                                        {{--<p><a href="callto://+00812458356987">+008 12458 356 987 (toll free)</a></p>--}}
-                                        {{--<p><a href="callto://+00825647987546">+008 25647 987 546</a></p>--}}
-                                    {{--</div>--}}
-                                    {{--<div class="mails">--}}
-                                        {{--<p><a href="mailto://info@nail’sboat.com">info@nail’sboat.com</a></p>--}}
-                                        {{--<p><a href="mailto://www.nail’sboat.com">www.nail’sboat.com</a></p>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div><!-- END FOOTER TOPSIDE -->--}}
-        {{--<!-- START FOOTER BOTTOMSIDE -->--}}
-        {{--<div class="footer__bottomside bg--dark ptb--20">--}}
-            {{--<div class="container">--}}
-                {{--<div class="row">--}}
-                    {{--<div class="col-md-12">--}}
-                        {{--<div class="copyright text-center">--}}
-                            {{--<p>&copy;Copyrihgt <a href="https://hastech.company">Hastech</a>, All rights Reverved, 2017</p>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div><!-- END FOOTER BOTTOMSIDE -->--}}
-    {{--</footer><!-- END FOOTER AREA -->--}}
+    <footer id="footer" class="footer fixed--footer">
+        <!-- START FOOTER TOPSIDE -->
+        <div class="footer__topside bg--grey ptb--100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="ft-widget">
+                            <div class="ft-widget__single useful-links">
+                                <h5 class="ft-widget__title">Useful Links</h5>
+                                <ul>
+                                    <li><a href="about.html">About Nail’s Boat</a></li>
+                                    <li><a href="index-2.html#">Our Team</a></li>
+                                    <li><a href="index-2.html#">Testimonials</a></li>
+                                    <li><a href="index-2.html#">Features</a></li>
+                                    <li><a href="index-2.html#">Term’s & Condition’s</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                </ul>
+                            </div>
+                            <div class="ft-widget__single twitter-feed">
+                                <h5 class="ft-widget__title">Twitter Feed</h5>
+                                <div class="twitter-feed__single">
+                                    <span class="twitter-feed__icon"><i class="fa fa-twitter"></i></span>
+                                    <div class="twitter-feed__content">
+                                        <p><a href="https://twitter.com/">@Joshef Marting,</a> Fishing is very enjoyable and mind refresh</p>
+                                        <span class="time"><a href="https://twitter.com/">09 Min Ago</a></span>
+                                    </div>
+                                </div>
+                                <div class="twitter-feed__single">
+                                    <span class="twitter-feed__icon"><i class="fa fa-twitter"></i></span>
+                                    <div class="twitter-feed__content">
+                                        <p><a href="https://twitter.com/">@Stuart Miler,</a> Fishing is very enjoyable and mind refresh</p>
+                                        <span class="time"><a href="https://twitter.com/">25 Min Ago</a></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ft-widget__single flicker-feed">
+                                <h5 class="ft-widget__title">Flickr Stream</h5>
+                                <ul class="flicker-feed__images">
+                                    <li><a href="https://www.flickr.com/"><img src="images/flicker/1.png" alt="flicker feed"></a></li>
+                                    <li><a href="https://www.flickr.com/"><img src="images/flicker/2.png" alt="flicker feed"></a></li>
+                                    <li><a href="https://www.flickr.com/"><img src="images/flicker/3.png" alt="flicker feed"></a></li>
+                                    <li><a href="https://www.flickr.com/"><img src="images/flicker/4.png" alt="flicker feed"></a></li>
+                                    <li><a href="https://www.flickr.com/"><img src="images/flicker/5.png" alt="flicker feed"></a></li>
+                                </ul>
+                            </div>
+                            <div class="ft-widget__single contact-info">
+                                <h5 class="ft-widget__title">Contact Info</h5>
+                                <div class="contact-info__inner">
+                                    <div class="address">
+                                        <p>125 New Yourk, Straight Road <br> River Side Lane, USA</p>
+                                    </div>
+                                    <div class="numbers">
+                                        <p><a href="callto://+00812458356987">+008 12458 356 987 (toll free)</a></p>
+                                        <p><a href="callto://+00825647987546">+008 25647 987 546</a></p>
+                                    </div>
+                                    <div class="mails">
+                                        <p><a href="mailto://info@nail’sboat.com">info@nail’sboat.com</a></p>
+                                        <p><a href="mailto://www.nail’sboat.com">www.nail’sboat.com</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- END FOOTER TOPSIDE -->
+        <!-- START FOOTER BOTTOMSIDE -->
+        <div class="footer__bottomside bg--dark ptb--20">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="copyright text-center">
+                            <p>&copy;Copyrihgt <a href="https://hastech.company">Fish Market</a>, All rights Reverved, 2018</p> <p>Site by
+                                <a href="" target="_blank">Moorget Group</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- END FOOTER BOTTOMSIDE -->
+    </footer><!-- END FOOTER AREA -->
 
 
     <!-- START SINGN IN FORM -->
