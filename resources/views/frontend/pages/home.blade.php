@@ -29,8 +29,8 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="banner__single__content text-center">
-                                <h3 class="special--font">{{ $slider->$slider_title }}</h3>
-                                <h1 class="heading--font special--font">{!! $slider->$slider_desc !!}</h1>
+                                <h3 class="">{{ $slider->$slider_title }}</h3>
+                                <h1 class="heading--font">{!! $slider->$slider_desc !!}</h1>
                             </div>
                         </div>
                     </div>
