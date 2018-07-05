@@ -409,7 +409,7 @@
                             <div class="blog__content">
                                 <div class="blog__content__details">
                                     <h5><a href="{{ url('/blog/'.$blog->id.'/'.$link_blog) }}">{{ $blog->$blog_title }}</a></h5>
-                                    <p>{!! $blog->$blog_text !!}</p>
+                                    <p>{!! substr(($blog->$blog_text),0,200) !!}</p>
                                 </div>
                             </div>
                         </article>

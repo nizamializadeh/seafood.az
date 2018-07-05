@@ -21,6 +21,7 @@ Route::get('/shop', 'Frontend\IndexController@shop');
 Route::get('/product/{id}/{name}', 'Frontend\IndexController@product');
 Route::get('/blogs', 'Frontend\IndexController@blogs');
 Route::get('/blog/{id}/{name}', 'Frontend\IndexController@singleblog');
+Route::get('/camp/{id}/{name}', 'Frontend\IndexController@singlecamp');
 Route::get('/camps', 'Frontend\IndexController@camps');
 Route::get('/cart', 'Frontend\CartController@index');
 Route::get('/lang/{lang}', 'LangController@index');

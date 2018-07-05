@@ -11,7 +11,7 @@
                             <div class="single-blog__content">
                                 @if (Auth::guest())
                                     Please login your account
-                                @else
+                                    @else
                                     <h3 class="single-blog__title">Hello {{ Auth::user()->name }}</h3>
                                 @endif
                             </div>
