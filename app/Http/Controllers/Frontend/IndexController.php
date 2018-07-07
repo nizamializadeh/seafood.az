@@ -8,6 +8,7 @@ use App\Brand;
 use App\Camp;
 use App\Product;
 use App\Product_Category;
+use App\Reservation;
 use App\Service;
 use App\Slider;
 use Illuminate\Http\Request;
@@ -68,6 +69,18 @@ class IndexController extends Controller
     public function singlecamp($id){
         $camp = Camp::findOrFail($id);
         return view('frontend.pages.singlecamp', compact('camp'));
+    }
+
+    public function reservation(Request $request){
+        $rezerv = new Reservation();
+        $rezerv->name = $request->name;
+        $rezerv->user_id = $request->user_id;
+        $rezerv->surname = $request->surname;
+        $rezerv->email = $request->email;
+        $rezerv->phone = $request->phone;
+        $rezerv->camp_id = $request->camp_id;
+        $rezerv->save();
+        return back();
     }
 
     public function contact(){

@@ -66,46 +66,41 @@
                                             <div class="modal-body">
                                                 <div class="row">
                                                     <div class="col-md-6">
-                                                        @if (Auth::guest())
                                                             <div class="form-group">
                                                                 <label for="exampleInputName">Name</label>
                                                                 <input type="text" name="name" class="form-control" id="exampleInputName" placeholder="Name">
+                                                                <input type="hidden" name="user_id" value="
+                                                                @if (Auth::guest())
+                                                                @else
+                                                                {{ Auth::user()->id }}
+                                                                @endif
+                                                                        ">
                                                             </div>
-                                                        @else
-                                                            <div class="form-group">
-                                                                <label for="exampleInputName">Name</label><br>
-                                                                <h3>{{ Auth::user()->name }}</h3>
-                                                                <input type="hidden" name="name" class="form-control">
-                                                            </div>
-                                                        @endif
                                                     </div>
                                                     <div class="col-md-6">
-                                                        @if (Auth::guest())
                                                         <div class="form-group">
                                                             <label for="exampleInputName">Surname</label>
-                                                            <input type="text" class="form-control" id="exampleInputName" placeholder="Surname">
+                                                            <input type="text" name="surname" class="form-control" id="exampleInputName" placeholder="Surname">
                                                         </div>
-                                                        @else
-
-                                                        @endif
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="exampleInputEmail">Email</label>
-                                                            <input type="email" class="form-control" id="exampleInputEmail" placeholder="Email">
+                                                            <input type="email" name="email" class="form-control" id="exampleInputEmail" placeholder="Email">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="exampleInputPhone">Phone</label>
-                                                            <input type="text" class="form-control" id="exampleInputEmail" placeholder="Phone">
+                                                            <input type="text" name="phone" class="form-control" id="exampleInputEmail" placeholder="Phone">
                                                         </div>
                                                     </div>
+                                                    <input type="hidden" name="camp_id" value="{{ $camp->id }}">
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-primary">Send</button>
+                                                <button type="submit" class="btn btn-primary">Send</button>
                                             </div>
                                         </div>
                                         </form>

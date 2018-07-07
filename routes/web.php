@@ -23,13 +23,10 @@ Route::get('/blogs', 'Frontend\IndexController@blogs');
 Route::get('/blog/{id}/{name}', 'Frontend\IndexController@singleblog');
 Route::get('/camp/{id}/{name}', 'Frontend\IndexController@singlecamp');
 Route::get('/camps', 'Frontend\IndexController@camps');
+Route::post('/reservation', 'Frontend\IndexController@reservation');
 Route::get('/cart', 'Frontend\CartController@index');
 Route::get('/lang/{lang}', 'LangController@index');
-Route::post('/cart-post', 'Frontend\CartController@store');
-Route::get('/empty', function (){
-    Cart::destroy();
-});
-Route::delete('/cart/{product}', 'Frontend\CartController@destroy')->name('cart.destroy');
+
 Route::get('/contact', 'Frontend\IndexController@contact');
 Route::group(['prefix' => 'user','middleware' => 'auth'],function (){
     Route::get('/profile', 'Frontend\IndexController@profile')->name('user.dashboard');
