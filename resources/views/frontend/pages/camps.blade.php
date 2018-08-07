@@ -16,41 +16,16 @@
                 </div>
             </div>
         </div>
-        <div class="breadcamb__tree bg--pattern ptb--20">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                        <div class="breadcamb__tree__inner">
-                            <ul>
-
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                        <div class="breadcamb__tree__social social-icons social-icons--rounded text-right">
-                            <ul>
-                                <li class="facebook"><a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
-                                <li class="twitter"><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
-                                <li class="instagram"><a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a></li>
-                                <li class="google-plus"><a href="https://plus.google.com/discover"><i class="fa fa-google-plus"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div><!-- END BREADCAMB AREA -->
 @endsection
 
 @section('content')
     <!-- START MAIN CONTENT -->
     <main class="main-content">
-
         <!-- START BLOG GRID AREA -->
         <div class="blog-grid-area ptb--150 bg--white">
             <div class="container">
                 <div class="row">
-
                     <div class="col-md-12">
                         <div class="blog-grid">
                             <div class="row">

@@ -49,10 +49,8 @@
                                         <form action="{{ route('cart.destroy', $item->rowId) }}" method="POST">
                                             {{ csrf_field() }}
                                             {{ method_field('DELETE') }}
-
                                             <button type="submit" class="cart-pro-remove"><i class="fa fa-trash-o"></i></button>
                                         </form>
-
                                     </td>
                                 </tr>
                                 @endforeach
@@ -63,7 +61,7 @@
                         <div class="row pt--30">
                             <!-- Cart Action -->
                             <div class="cart-action col-lg-4 col-md-6 col-12 mb--30">
-                                <a href="shop-right-sidebar.html" class="cr-btn cr-btn--sm cr-round cr-round--lg">Continiue Shopping</a>
+                                <a href="{{ url('/shop') }}" class="cr-btn cr-btn--sm cr-round cr-round--lg">Continiue Shopping</a>
                                 <button class="cr-btn cr-btn--sm cr-round cr-round--lg">update cart</button>
                             </div>
 
@@ -75,8 +73,8 @@
                             <!-- Cart Checkout Progress -->
                             <div class="cart-checkout-process col-lg-4 col-md-6 col-12 mb--30">
                                 <h4 class="small-title">Process Checkout</h4>
-                                <p><span>Subtotal</span><span>{{ Cart::subtotal() }}</span></p>
-                                <h5><span>Grand total</span><span>{{ Cart::total() }}</span></h5>
+                                <p><span>Subtotal</span><span>{{ Cart::subtotal() }} AZN</span></p>
+                                <h5><span>Grand total</span><span>{{ Cart::total() }} AZN</span></h5>
                                 <button class="cr-btn cr-btn--sm cr-round cr-round--lg">process to checkout</button>
                             </div>
 
@@ -92,27 +90,5 @@
                 </div>
             </div>
         </div><!-- START CART SECTION-->
-
-        <!-- START NEWSLETTER AREA -->
-        <section class="cr-section newsletter-area bg--pattern ptb--130">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-10 offset-lg-1">
-                        <div class="newsletter text-center">
-                            <div class="newsletter__content">
-                                <h2>You can updated with us by Subscribing our newsletter</h2>
-                                <h5>So! why you’r late? let’s start subscription...</h5>
-                            </div>
-                            <div class="newsletter__form">
-                                <form action="#">
-                                    <input type="text" placeholder="Enter yur email here...">
-                                    <button type="submit"><img src="images/icons/fish-send-icon.png" alt=""></button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section><!-- END NEWSLETTER AREA -->
     </main><!-- END MAIN CONTENT -->
     @endsection

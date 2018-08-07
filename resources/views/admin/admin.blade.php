@@ -103,6 +103,12 @@
                     <a href="{{url('/admin/about-admin')}}" class="waves-effect"><i class="fa fa-font fa-fw" aria-hidden="true"></i>About</a>
                 </li>
                 <li>
+                    <a href="{{url('/admin/users')}}" class="waves-effect"><i class="fa fa-users" aria-hidden="true"></i> &nbsp Users</a>
+                </li>
+                <li>
+                    <a href="{{url('/admin/reservations')}}" class="waves-effect"><i class="fa fa-flag" aria-hidden="true"></i> &nbsp Reservations</a>
+                </li>
+                <li>
                     <a href="{{url('/admin/slider')}}" class="waves-effect"><i class="fa fa-images" aria-hidden="true"></i> &nbsp Slider</a>
                 </li>
                 <li>

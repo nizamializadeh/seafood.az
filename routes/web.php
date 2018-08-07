@@ -25,9 +25,16 @@ Route::get('/camp/{id}/{name}', 'Frontend\IndexController@singlecamp');
 Route::get('/camps', 'Frontend\IndexController@camps');
 Route::post('/reservation', 'Frontend\IndexController@reservation');
 Route::get('/cart', 'Frontend\CartController@index');
+Route::post('/cart-post', 'Frontend\CartController@store');
+Route::get('/empty', function (){
+    Cart::destroy();
+});
+Route::delete('/cart/{product}', 'Frontend\CartController@destroy')->name('cart.destroy');
+Route::get('/checkout', 'Frontend\CheckoutController@index');
+Route::post('/postcheckout', 'Frontend\CheckoutController@store');
 Route::get('/lang/{lang}', 'LangController@index');
-
 Route::get('/contact', 'Frontend\IndexController@contact');
+
 Route::group(['prefix' => 'user','middleware' => 'auth'],function (){
     Route::get('/profile', 'Frontend\IndexController@profile')->name('user.dashboard');
 });
@@ -98,7 +105,9 @@ Route::prefix('admin')->group(function() {
   Route::patch('/productcategory/{category}', 'Backend\ProductCatsController@update');
   Route::delete('/productcategory/{category}/delete', 'Backend\ProductCatsController@destroy');
   Route::get('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
-
+  Route::get('/users', 'AdminController@users');
+  Route::delete('/user/{user}/delete', 'AdminController@userdelete');
+  Route::get('/reservations', 'AdminController@reservations');
   // Password reset routes
   Route::post('/password/email', 'Auth\AdminForgotPasswordController@sendResetLinkEmail')->name('admin.password.email');
   Route::get('/password/reset', 'Auth\AdminForgotPasswordController@showLinkRequestForm')->name('admin.password.request');

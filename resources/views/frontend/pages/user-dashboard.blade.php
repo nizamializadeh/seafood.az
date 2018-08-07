@@ -12,7 +12,37 @@
                                 @if (Auth::guest())
                                     Please login your account
                                     @else
-                                    <h3 class="single-blog__title">Hello {{ Auth::user()->name }}</h3>
+                                    <h3 class="single-blog__title">Hello {{ Auth::user()->name }}</h3> <br>
+
+                                    {{--<div class="row">--}}
+                                        {{--Your Camps--}}
+                                        {{--<table class="table table-striped">--}}
+                                            {{--<thead>--}}
+                                            {{--<tr>--}}
+                                                {{--<th>Camp</th>--}}
+                                                {{--<th>Date</th>--}}
+                                                {{--<th>Location</th>--}}
+                                            {{--</tr>--}}
+                                            {{--</thead>--}}
+                                            {{--<tbody>--}}
+                                            {{--<tr>--}}
+                                                {{--<td>{{ Auth::user()->camp()->camp_title_az }}</td>--}}
+                                                {{--<td>Doe</td>--}}
+                                                {{--<td>john@example.com</td>--}}
+                                            {{--</tr>--}}
+                                            {{--<tr>--}}
+                                                {{--<td>Mary</td>--}}
+                                                {{--<td>Moe</td>--}}
+                                                {{--<td>mary@example.com</td>--}}
+                                            {{--</tr>--}}
+                                            {{--<tr>--}}
+                                                {{--<td>July</td>--}}
+                                                {{--<td>Dooley</td>--}}
+                                                {{--<td>july@example.com</td>--}}
+                                            {{--</tr>--}}
+                                            {{--</tbody>--}}
+                                        {{--</table>--}}
+                                    {{--</div>--}}
                                 @endif
                             </div>
                         </div>

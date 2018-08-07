@@ -22,7 +22,7 @@ class BlogsController extends Controller
      */
     public function index()
     {
-        $blogs = Blog::all();
+        $blogs = Blog::orderBy('id', 'DESC')->get();
         return view('admin.pages.blogs.blogs', compact('blogs'));
     }
 

@@ -51,20 +51,31 @@
                 <div class="container">
                     <div class="row">
                         @foreach($products as $product)
+                            @php
+                                $number = $product->price;
+                                $subprice = number_format($number, 2);
+                            @endphp
                         <!-- START SINGLE PRODUCT -->
                         <div class="col-lg-3 col-md-4 col-sm-6 col-12">
                             <div class="product">
                                 <div class="product__thumb">
                                     <img src="{{ '/images/'.$product->product_image }}" alt="single product">
                                 </div>
-                                <a href="single-product.html" class="product-buy"><i class="fa fa-shopping-basket"></i></a>
+                                <form action="{{ url('/cart-post') }}" method="POST">
+                                    {{ csrf_field() }}
+                                    <input type="hidden" name="id" value="{{ $product->id }}">
+                                    <input type="hidden" name="name" value="{{ $product->product_name_az }}">
+                                    <input type="hidden" name="price" value="{{ $subprice }}">
+                                    <input type="hidden" value="1" name="quantity">
+                                    <button type="submit" class="product-buy"><i class="fa fa-shopping-cart"></i></button>
+                                </form>
                                 <div class="product__content">
                                     <div class="product__content__inner">
                                         @php
                                             $link_product = str_slug($product->product_name_en, '_')
                                         @endphp
                                         <h5><a href="{{ url('/product/'.$product->id.'/'.$link_product) }}">{{ $product->product_name_az }}</a></h5>
-                                        <span class="price">{{ $product->price }}</span>
+                                        <span class="price">{{ $subprice }} AZN</span>
                                     </div>
                                 </div>
                             </div>
@@ -76,12 +87,7 @@
                         <div class="col-md-12">
                             <div class="cr-pagination text-center">
                                 <ul>
-                                    <li><a href="shop.html">01</a></li>
-                                    <li><a href="shop.html">02</a></li>
-                                    <li class="active"><a href="shop.html">03</a></li>
-                                    <li><a href="shop.html">04</a></li>
-                                    <li><a href="shop.html">05</a></li>
-                                    <li><a href="shop.html">06</a></li>
+                                    {!! $products->links(); !!}
                                 </ul>
                             </div>
                         </div>

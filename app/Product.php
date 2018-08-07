@@ -15,6 +15,7 @@ class Product extends Model
      */
 //    public function presentPrice(){
 //        $number->price;
-//        return number_format($number, 2, ',');
+//        $price = number_format($number);
+//        return $price;
 //    }
 }
