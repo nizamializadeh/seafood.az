@@ -9,7 +9,7 @@ use App\Brand;
 use App\Camp;
 use App\Contact;
 use App\Product;
-use App\Product_Category;
+use App\Category;
 use App\Reservation;
 use App\Service;
 use App\Slider;
@@ -52,7 +52,7 @@ class IndexController extends Controller
 
     public function product($id){
         $product = Product::findOrFail($id);
-        $categories = Product_Category::OrderBy('id', 'DESC')->get();
+        $categories = Category::OrderBy('id', 'DESC')->get();
         $contact = Contact::first();
 
 //        $number = $product->price;

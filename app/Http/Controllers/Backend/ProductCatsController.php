@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Product_Category;
+use App\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -21,7 +21,7 @@ class ProductCatsController extends Controller
      */
     public function index()
     {
-        $categories = Product_Category::OrderBy('id', 'DESC')->get();
+        $categories = Category::OrderBy('id', 'DESC')->get();
         return view('admin.pages.productcat.categories', compact('categories'));
     }
 
@@ -43,7 +43,7 @@ class ProductCatsController extends Controller
      */
     public function store(Request $request)
     {
-        $category = new Product_Category();
+        $category = new Category();
         $category->product_cat_az = $request->name_az;
         $category->product_cat_en = $request->name_en;
         $category->product_cat_ru = $request->name_ru;
@@ -68,9 +68,9 @@ class ProductCatsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product_Category $category)
+    public function edit(_Category $category)
     {
-        $data = Product_Category::find($category);
+        $data = Category::find($category);
         return view('admin.pages.productcat.edit', compact('data', 'category'));
     }
 
@@ -83,7 +83,7 @@ class ProductCatsController extends Controller
      */
     public function update(Request $request, $category)
     {
-        $category = Product_Category::find($category);
+        $category = Category::find($category);
         $category->product_cat_az = $request->name_az;
         $category->product_cat_en = $request->name_en;
         $category->product_cat_ru = $request->name_ru;
@@ -99,7 +99,7 @@ class ProductCatsController extends Controller
      */
     public function destroy($id)
     {
-        $category = Product_Category::find($id);
+        $category = Category::find($id);
         $category->delete();
         return redirect('/admin/categories');
     }

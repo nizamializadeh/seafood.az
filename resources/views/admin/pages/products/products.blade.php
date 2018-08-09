@@ -18,10 +18,8 @@
                             <th>#</th>
                             <th>Name</th>
                             <th>Details</th>
-                            <th>Description</th>
-                            <th>Category</th>
                             <th>Price</th>
-                            <th>Image</th>
+                            <th>Activity</th>
                             <th>Options</th>
                         </tr>
                         </thead>
@@ -31,10 +29,23 @@
                                 <td>{{ $product->id }}</td>
                                 <td>{{ $product->product_name_az }}</td>
                                 <td>{!! substr(($product->product_details_az),0,100) !!}</td>
-                                <td>{!! substr(($product->product_desc_az),0,200) !!}</td>
-                                <td>{{ $product->product_category->product_cat_az }}</td>
                                 <td>{{ $product->price }}</td>
-                                <td>{{ $product->product_image }}</td>
+                                <td>
+                                    @if($product->activity == '1')
+                                        <form action="/admin/product/{{ $product->id }}/busy" method="POST" enctype="multipart/form-data" class="form-horizontal form-material">
+                                            {{ method_field('PATCH') }}
+                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                            <button type="submit" class="btn btn-primary">Available</button>
+                                        </form>
+                                    @endif
+                                        @if($product->activity == '0')
+                                            <form action="/admin/product/{{ $product->id }}/aviable" method="POST" enctype="multipart/form-data" class="form-horizontal form-material">
+                                                {{ method_field('PATCH') }}
+                                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                <button type="submit" class="btn btn-danger">Busy</button>
+                                            </form>
+                                        @endif
+                                </td>
                                 <td>
                                     <a href="/admin/show/product/{{ $product->id }}">
                                         <button type="button" class="btn btn-success"><i class="fa fa-eye" aria-hidden="true"></i>

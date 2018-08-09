@@ -77,11 +77,21 @@
                         <div class="form-group">
                             <label class="col-sm-12">Select Category</label>
                             <div class="col-sm-12">
-                                <select class="form-control form-control-line" name="category_id">
+                                <select class="form-control form-control-line select2" name="categories[]" multiple="multiple">
                                     {{--<option value="disabled" class="disabled">Categories</option>--}}
                                     @foreach($categories as $category)
                                         <option value="{{ $category->id }}">{{ $category->product_cat_en }}</option>
                                     @endforeach
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-12">Quantity type</label>
+                            <div class="col-sm-12">
+                                <select class="form-control form-control-line" name="quantity">
+                                        <option value="0">KG</option>
+                                        <option value="1">Number</option>
                                 </select>
                             </div>
                         </div>
@@ -105,6 +115,11 @@
         </div>
     </div>
     <!-- /.row -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.select2').select2();
+        });
+    </script>
 @endsection
 
 

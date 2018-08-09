@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Product;
-use App\Product_Category;
+use App\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -31,7 +31,7 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        $categories = Product_Category::OrderBy('id', 'DESC')->get();
+        $categories = Category::OrderBy('id', 'DESC')->get();
         return view('admin.pages.products.create', compact('categories'));
     }
 
@@ -53,14 +53,16 @@ class ProductsController extends Controller
         $product->product_desc_az = $request->desc_az;
         $product->product_desc_en = $request->desc_en;
         $product->product_desc_ru = $request->desc_ru;
-        $product->product_cat_id = $request->category_id;
-        $product->price = $request->price;
+        $product->activity = '1';
+        $product->quantity_style = $request->quantity;
+        $product->price = number_format($request->price, 2);
         if ($request->hasFile('img')){
             $name = time().".".$request->file("img")->extension();
             $product->product_image = $name;
             $request->file("img")->move(public_path().'/images', $name);
         }
         $product->save();
+        $product->categories()->sync($request->categories, false);
         return redirect('/admin/products-admin');
     }
 
@@ -85,7 +87,7 @@ class ProductsController extends Controller
     public function edit(Product $product)
     {
         $data = Product::find($product);
-        $categories = Product_Category::OrderBy('id', 'DESC')->get();
+        $categories = Category::OrderBy('id', 'DESC')->get();
         return view('admin.pages.products.edit', compact('data', 'product', 'categories'));
     }
 
@@ -108,14 +110,19 @@ class ProductsController extends Controller
         $product->product_desc_az = $request->desc_az;
         $product->product_desc_en = $request->desc_en;
         $product->product_desc_ru = $request->desc_ru;
-        $product->product_cat_id = $request->category_id;
-        $product->price = $request->price;
+        $product->price = number_format($request->price, 2);
+        $product->quantity_style = $request->quantity;
         if ($request->hasFile('img')){
             $name = time().".".$request->file("img")->extension();
             $product->product_image = $name;
             $request->file("img")->move(public_path().'/images', $name);
         }
         $product->save();
+        if (isset($request->categories)) {
+            $product->categories()->sync($request->categories, false);
+        }else{
+            $product->categories()->sync(array());
+        }
         return redirect('/admin/products-admin');
     }
 

@@ -57,7 +57,49 @@
         </div>
         <div class="panel-body">
             <div class="page-header">
-                <p>{{ $product->product_category->product_cat_az }}</p>
+                @foreach($product->categories as $category)
+                    <span class="label label-default">{{ $category->product_cat_az }}</span>
+                @endforeach
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Activity</h3>
+        </div>
+        <div class="panel-body">
+            <div class="page-header">
+                @if($product->activity == '1')
+                    <form action="/admin/product/{{ $product->id }}/busy" method="POST" enctype="multipart/form-data" class="form-horizontal form-material">
+                        {{ method_field('PATCH') }}
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <button type="submit" class="btn btn-primary">Available</button>
+                    </form>
+                @endif
+                @if($product->activity == '0')
+                    <form action="/admin/product/{{ $product->id }}/aviable" method="POST" enctype="multipart/form-data" class="form-horizontal form-material">
+                        {{ method_field('PATCH') }}
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <button type="submit" class="btn btn-danger">Busy</button>
+                    </form>
+                @endif
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Quantity type</h3>
+        </div>
+        <div class="panel-body">
+            <div class="page-header">
+                @if($product->quantity_style == '0')
+                <p>KQ</p>
+                    @endif
+                    @if($product->quantity_style == '1')
+                        <p>Number</p>
+                    @endif
             </div>
         </div>
     </div>

@@ -21,13 +21,13 @@ class CreateProductsTable extends Migration
             $table->string('product_details_az')->nullable();
             $table->string('product_details_en')->nullable();
             $table->string('product_details_ru')->nullable();
-            $table->text('product_desc_az');
-            $table->text('product_desc_en');
-            $table->text('product_desc_ru');
-            $table->string('product_image');
+            $table->text('product_desc_az')->nullable();
+            $table->text('product_desc_en')->nullable();
+            $table->text('product_desc_ru')->nullable();
+            $table->string('product_image')->nullable();
             $table->float('price');
-            $table->integer('product_cat_id')->unsigned()->index();
-            $table->foreign('product_cat_id')->references('id')->on('product__categories')->onDelete('cascade');
+            $table->boolean('activity')->nullable();
+            $table->boolean('quantity_style')->nullable();
             $table->timestamps();
         });
     }
