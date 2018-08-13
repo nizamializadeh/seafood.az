@@ -29,7 +29,7 @@
                                 <td>{{ $product->id }}</td>
                                 <td>{{ $product->product_name_az }}</td>
                                 <td>{!! substr(($product->product_details_az),0,100) !!}</td>
-                                <td>{{ $product->price }}</td>
+                                <td>{{ $product->price }} AZN</td>
                                 <td>
                                     @if($product->activity == '1')
                                         <form action="/admin/product/{{ $product->id }}/busy" method="POST" enctype="multipart/form-data" class="form-horizontal form-material">
@@ -39,7 +39,7 @@
                                         </form>
                                     @endif
                                         @if($product->activity == '0')
-                                            <form action="/admin/product/{{ $product->id }}/aviable" method="POST" enctype="multipart/form-data" class="form-horizontal form-material">
+                                            <form action="/admin/product/{{ $product->id }}/available" method="POST" enctype="multipart/form-data" class="form-horizontal form-material">
                                                 {{ method_field('PATCH') }}
                                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                                 <button type="submit" class="btn btn-danger">Busy</button>

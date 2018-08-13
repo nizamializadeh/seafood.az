@@ -19,6 +19,7 @@ Route::get('/aboutus', 'Frontend\IndexController@about');
 Route::get('/services', 'Frontend\IndexController@services');
 Route::get('/shop', 'Frontend\IndexController@shop');
 Route::get('/product/{id}/{name}', 'Frontend\IndexController@product');
+Route::get('/category/{id}/{name}', 'Frontend\IndexController@category');
 Route::get('/blogs', 'Frontend\IndexController@blogs');
 Route::get('/blog/{id}/{name}', 'Frontend\IndexController@singleblog');
 Route::get('/camp/{id}/{name}', 'Frontend\IndexController@singlecamp');
@@ -98,6 +99,8 @@ Route::prefix('admin')->group(function() {
   Route::patch('/product/{product}', 'Backend\ProductsController@update');
   Route::get('/show/product/{product}', 'Backend\ProductsController@show');
   Route::delete('/product/{product}/delete', 'Backend\ProductsController@destroy');
+  Route::patch('/product/{product}/busy', 'Backend\ProductsController@busy');
+  Route::patch('/product/{product}/available', 'Backend\ProductsController@available');
   Route::get('/categories', 'Backend\ProductCatsController@index');
   Route::get('/productcategoryCreate', 'Backend\ProductCatsController@create');
   Route::post('/productcategory-create', 'Backend\ProductCatsController@store');

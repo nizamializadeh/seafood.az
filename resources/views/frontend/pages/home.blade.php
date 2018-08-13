@@ -117,6 +117,7 @@
                 <div class="container">
                     <div class="row">
                         @foreach($products as $product)
+                            @if($product->activity == '1')
                             @php
                                 $link_product = str_slug($product->product_name_en, '-')
                             @endphp
@@ -147,6 +148,7 @@
                             </div>
                         </div>
                         <!-- END SINGLE PRODUCT -->
+                            @endif
                         @endforeach
                     </div>
                 </div>

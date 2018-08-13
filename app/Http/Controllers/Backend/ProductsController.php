@@ -126,6 +126,20 @@ class ProductsController extends Controller
         return redirect('/admin/products-admin');
     }
 
+    public function busy(Product $request, $id){
+        $product = Product::findOrFail($id);
+        $product->activity = '0';
+        $product->save();
+        return redirect('/admin/products-admin');
+    }
+
+    public function available(Product $request, $id){
+        $product = Product::findOrFail($id);
+        $product->activity = '1';
+        $product->save();
+        return redirect('/admin/products-admin');
+    }
+
     /**
      * Remove the specified resource from storage.
      *

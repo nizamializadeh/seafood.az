@@ -47,18 +47,25 @@ class IndexController extends Controller
     public function shop(){
         $products = Product::OrderBy('id', 'DESC')->paginate(12);
         $contact = Contact::first();
-        return view('frontend.pages.shop',  compact('products', 'contact'));
+        $categories = Category::OrderBy('id', 'DESC')->get();
+        return view('frontend.pages.shop',  compact('products', 'contact', 'categories'));
     }
 
     public function product($id){
         $product = Product::findOrFail($id);
         $categories = Category::OrderBy('id', 'DESC')->get();
         $contact = Contact::first();
-
-//        $number = $product->price;
-//        $price = number_format($number);
-//        dd($price);
         return view('frontend.pages.product', compact('product', 'id', 'categories', 'contact'));
+    }
+
+    public function category($id){
+        $category = Category::findOrFail($id);
+//        dd($category->product()->get());
+        $products = $category->product()->orderBy('id', 'DESC')->get();
+
+        $categories = Category::OrderBy('id', 'DESC')->get();
+        $contact = Contact::first();
+        return view('frontend.pages.category', compact('category', 'products', 'categories', 'contact'));
     }
 
     public function blogs(){
@@ -104,10 +111,8 @@ class IndexController extends Controller
         return view('frontend.pages.contact', compact('contact', 'socials'));
     }
 
-
     public function profile(){
         $contact = Contact::first();
-
         return view('frontend.pages.user-dashboard', compact('contact'));
     }
 }

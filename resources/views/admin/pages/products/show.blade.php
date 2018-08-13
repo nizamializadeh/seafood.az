@@ -78,7 +78,7 @@
                     </form>
                 @endif
                 @if($product->activity == '0')
-                    <form action="/admin/product/{{ $product->id }}/aviable" method="POST" enctype="multipart/form-data" class="form-horizontal form-material">
+                    <form action="/admin/product/{{ $product->id }}/available" method="POST" enctype="multipart/form-data" class="form-horizontal form-material">
                         {{ method_field('PATCH') }}
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <button type="submit" class="btn btn-danger">Busy</button>

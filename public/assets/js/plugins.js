@@ -1,34 +1,4 @@
-/*********************************************************************************
 
-	Template Name: Nails Boat - Fishing and Hunting Club HTML Template 
-	Template URI: https://themeforest.net/user/
-	Description: Nailsboat is a beautiful and creative fishing and hunting club  html template
-	Author: HasTech
-	Author URI: https://themeforest.net/user/hastech
-	Version: 1.0
-
-	Note: This is plugins js. Common plugins include here.
-
-**********************************************************************************/
-
-
-/*===============================================================================
-			[ INDEX ]
-=================================================================================
-
-	Avoid Console
-	Owl Carousel
-	Youtube Player
-	Fakeloader
-	MobileMenu
-	ScrollUp
-
-=================================================================================
-			[ END INDEX ]
-================================================================================*/
-
-
-/*========= Avoid Console =========*/
 (function() {
 	var method;
 	var noop = function () {};

@@ -39,7 +39,7 @@
             </div>
         </div>
     </div><!-- END BREADCAMB AREA -->
-    @endsection
+@endsection
 
 @section('content')
     <!-- START MAIN CONTENT -->
@@ -52,8 +52,8 @@
                     <div class="row">
                         <div class="col-lg-3 mt-md-50 mt-sm-50 mt-xs-50">
                             <!-- START SIDEBAR WIDGETS -->
-                                <div class="sidebar widgets">
-                                    <div class="fixed-box1">
+                            <div class="sidebar widgets">
+                                <div class="fixed-box1">
                                     <!-- START SINGLE WIDGET -->
                                     <div class="single-widget sb-categories">
                                         <h4 class="widget-title">Categories</h4>
@@ -66,8 +66,8 @@
                                             @endforeach
                                         </ul>
                                     </div><!-- END SINGLE WIDGET -->
-                                    </div>
-                                </div><!-- END SIDEBAR WIDGETS -->
+                                </div>
+                            </div><!-- END SIDEBAR WIDGETS -->
                         </div>
                         <div class="col-lg-9 col-md-9">
                             <div class="row">
@@ -104,23 +104,13 @@
                                         </div><!-- END SINGLE PRODUCT -->
                                     @else
                                     @endif
-                            @endforeach
+                                @endforeach
                             </div>
                         </div>
                     </div>
-                    <!-- START PAGINATION -->
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="cr-pagination text-center">
-                                <ul>
-                                    {!! $products->links(); !!}
-                                </ul>
-                            </div>
-                        </div>
-                    </div><!-- END PAGINATION -->
                 </div>
             </div>
         </section><!-- END SHOP PRODUCTS -->
 
     </main><!-- END MAIN CONTENT -->
-    @endsection
+@endsection

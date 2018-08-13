@@ -1,11 +1,11 @@
 <!doctype html>
-<html class="no-js" lang="zxx">
+<html lang="eng">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ MetaTag::get('title') }}</title>
     {!! MetaTag::tag('description') !!}
+
     {!! MetaTag::tag('image') !!}
 
     {!! MetaTag::openGraph() !!}
@@ -29,9 +29,14 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/plugins.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}?ver=1.0.3">
 
-    <!-- Cusom css -->
+    <!-- include the style -->
+    <link rel="stylesheet" href="{{ asset('assets/css/alertify.min.css') }}" />
+    <!-- include a theme -->
+    <link rel="stylesheet" href="{{ asset('assets/css/default.min.css') }}" />
+
+    <!-- Custom css -->
     <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
 
     <!-- Modernizer js -->
@@ -241,7 +246,9 @@
     </footer><!-- END FOOTER AREA -->
 
 <!-- JS Files -->
+
 <script src="{{ asset('assets/js/vendor/jquery-3.2.1.min.js') }}"></script>
+<script src="{{ asset('assets/js/alertify.min.js') }}"></script>
 <script src="{{ asset('assets/js/popper.min.js') }}"></script>
 <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('assets/js/plugins.js') }}"></script>

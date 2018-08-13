@@ -75,16 +75,14 @@
                                 <h4 class="small-title">Process Checkout</h4>
                                 <p><span>Subtotal</span><span>{{ Cart::subtotal() }} AZN</span></p>
                                 <h5><span>Grand total</span><span>{{ Cart::total() }} AZN</span></h5>
-                                <button class="cr-btn cr-btn--sm cr-round cr-round--lg">process to checkout</button>
+                                <a href="{{ url('/checkout') }}"><button class="cr-btn cr-btn--sm cr-round cr-round--lg">process to checkout</button></a>
                             </div>
 
                         </div>
 
                         @else
-                            <h4>No items in Cart</h4>
-
-                            <a href="{{ url('/shop') }}" class="cr-btn cr-btn--sm cr-round cr-round--lg">Continue Shopping</a>
-
+                            <h4>No item(s) in Cart</h4>
+                                <a href="{{ url('/shop') }}" class="cr-btn cr-btn--sm cr-round cr-round--lg">Continue Shopping</a>
                             @endif
                     </div>
                 </div>

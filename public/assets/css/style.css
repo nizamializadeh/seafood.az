@@ -1,7 +1,4 @@
 
-
-/*@import url("css/main.css");*/
-
 .panel-login {
     border-color: #ccc;
     -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
@@ -5068,6 +5065,10 @@ input[type="submit"] {
 }
 #card-errors{
     color: #fa755a;
+}
+.fixed-box{
+    position: fixed;
+    top: 30px;
 }
 .order-details-wrapper h2 {
     background: #44c3cf;

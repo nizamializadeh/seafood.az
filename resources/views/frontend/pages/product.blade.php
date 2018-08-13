@@ -2,17 +2,23 @@
 @section('content')
     <!-- START MAIN CONTENT -->
     <main class="main-content">
-
+        @if(session()->has('success_message'))
+            <script type="javascript">
+                $(function () {
+                    alertify.success('Success notification message.');
+                })
+            </script>
+        @endif
         <!-- START SHOP PRODUCTS -->
         <section class="sp-products-area ptb--150 bg--white">
             <div class="product-right-sidebar">
                 <div class="container">
+                    @if($product->activity == '1')
                     <div class="row">
                         <div class="col-lg-9">
                             <div class="single-product">
                                 <!-- START SINGLE PRODUCT INFORMATION -->
                                 <div class="single-product__info">
-
                                     <!-- START SINGLE PRODUCT LEFT INFO -->
                                     <div class="spi__images tab-content" id="single-pdoduct--images">
                                         <a class="spi-image-popup tab-pane fade show active" href="{{ '/images/'.$product->product_image }}" target="_blank" id="product-image-1">
@@ -23,7 +29,6 @@
                                         $number = $product->price;
                                         $subprice = number_format($number, 2);
                                     @endphp
-
                                     <!-- START SINGLE PRODUCT RIGHT INFO -->
                                     <div class="spi__contents">
                                         <div class="spi-info__top">
@@ -38,9 +43,13 @@
                                             {{ csrf_field() }}
                                         <div class="spi-units">
                                             <div class="spi-units__single unit-quantity">
-                                                <h5 class="spi-title">Quantity (kq | eded ) :</h5>
+                                                <h5 class="spi-title">Quantity (@if($product->quantity_style == '0') Kg  @else eded @endif ) :</h5>
                                                 <div class="cart-plus-minus">
-                                                    <input type="text" value="1" name="quantity" class="cart-plus-minus-box">
+                                                    @if($product->quantity_style == '0')
+                                                        <input type="text" value="5" min="5"  name="quantity">
+                                                    @else
+                                                        <input type="text" value="1" name="quantity" class="cart-plus-minus-box">
+                                                    @endif
                                                 </div>
                                             </div>
                                             {{--<div class="spi-units__single unit-review">--}}
@@ -78,13 +87,19 @@
                                     <h4 class="widget-title">Categories</h4>
                                     <ul>
                                         @foreach($categories as $category)
-                                        <li><a href="">{{ $category->product_cat_az }}</a></li>
+                                            @php
+                                                $link_category = str_slug($category->product_cat_en);
+                                            @endphp
+                                            <li><a href="{{ url('/category/'.$category->id.'/'.$link_category) }}">{{ $category->product_cat_az }}</a></li>
                                         @endforeach
                                     </ul>
                                 </div><!-- END SINGLE WIDGET -->
                             </div><!-- END SIDEBAR WIDGETS -->
                         </div>
                     </div>
+                        @else
+                        <h1>No item</h1>
+                    @endif
                 </div>
             </div>
         </section><!-- END SHOP PRODUCTS -->
