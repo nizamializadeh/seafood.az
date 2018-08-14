@@ -90,7 +90,7 @@
                                         <li><p class="strong">product</p><p class="strong">total</p></li>
                                         @if(Cart::count() > 0)
                                             @foreach(Cart::content() as $item)
-                                                <li><p>{{ $item->model->product_name_az }} x{{ $item->qty }}</p><p>{{ $item->model->price }} AZN</p></li>
+                                                <li><p>{{ $item->model->product_name_az }} x{{ $item->qty }}</p><p>{{ $item->total }} AZN</p></li>
                                             @endforeach
                                         @else
                                             No items in cart

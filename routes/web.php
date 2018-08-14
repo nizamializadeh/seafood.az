@@ -11,9 +11,6 @@
 |
 */
 Auth::routes();
-//Route::get('login',function (){
-//    return redirect(route('index'));
-//})->name('login');
 Route::get('/', 'Frontend\IndexController@index')->name('index');
 Route::get('/aboutus', 'Frontend\IndexController@about');
 Route::get('/services', 'Frontend\IndexController@services');
@@ -27,6 +24,7 @@ Route::get('/camps', 'Frontend\IndexController@camps');
 Route::post('/reservation', 'Frontend\IndexController@reservation');
 Route::get('/cart', 'Frontend\CartController@index');
 Route::post('/cart-post', 'Frontend\CartController@store');
+Route::patch('/cart-update', 'Frontend\CartController@update');
 Route::get('/empty', function (){
     Cart::destroy();
 });
@@ -39,7 +37,6 @@ Route::get('/contact', 'Frontend\IndexController@contact');
 Route::group(['prefix' => 'user','middleware' => 'auth'],function (){
     Route::get('/profile', 'Frontend\IndexController@profile')->name('user.dashboard');
 });
-
 
 Route::get('/home', 'Frontend\IndexController@index')->name('index');
 Route::get('/users/logout', 'Auth\LoginController@userLogout')->name('user.logout');

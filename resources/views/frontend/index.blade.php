@@ -93,7 +93,7 @@
                                                 </div>
                                                 <div class="single-product__content">
                                                     <a href="{{ url('/product/'.$item->id.'/'.$link_product) }}">{{ $item->model->product_name_az }}</a>
-                                                    <p>{{ $subprice }} AZN <span>X</span> {{ $item->qty }}</p>
+                                                    <p><span>X</span>{{ $item->qty }}  {{ $item->total() }} AZN</p>
                                                 </div>
                                                 <div class="single-product__close">
                                                     <form action="{{ route('cart.destroy', $item->rowId) }}" method="POST">
@@ -109,7 +109,7 @@
                             <div class="minicart__bottom">
                                 <div class="total-price d-flex justify-content-between">
                                     <span>Subtotal:</span>
-                                    <span>{{ Cart::total() }} AZN</span>
+                                    <span>{{ Cart::subtotal() }} AZN</span>
                                 </div>
                                 <div class="minicart__buttons d-flex justify-content-between">
                                     <a href="{{ url('/cart') }}" class="cr-btn cr-btn--xs">View Cart</a>
@@ -254,6 +254,7 @@
 <script src="{{ asset('assets/js/plugins.js') }}"></script>
 <script src="{{ asset('assets/js/active.js') }}"></script>
 <script src="{{ asset('assets/js/scripts.js') }}"></script>
+@yield('extra-js')
 {{--<script src="{{ asset('assets/js/slick-slider.min.js') }}"></script>--}}
 </body>
 </html>
