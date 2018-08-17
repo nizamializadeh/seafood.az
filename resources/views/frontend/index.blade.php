@@ -96,11 +96,11 @@
                                                     <p><span>X</span>{{ $item->qty }}  {{ $item->total() }} AZN</p>
                                                 </div>
                                                 <div class="single-product__close">
-                                                    <form action="{{ route('cart.destroy', $item->rowId) }}" method="POST">
-                                                        {{ csrf_field() }}
-                                                        {{ method_field('DELETE') }}
-                                                        <button type="submit" class="minicart-product-close"><i class="fa fa-trash-o"></i></button>
-                                                    </form>
+                                                    {{--<form action="{{ route('cart.destroy', $item->rowId) }}" method="POST">--}}
+                                                        {{--{{ csrf_field() }}--}}
+                                                        {{--{{ method_field('DELETE') }}--}}
+                                                        {{--<button type="submit" class="minicart-product-close"><i class="fa fa-trash-o"></i></button>--}}
+                                                    {{--</form>--}}
                                                 </div>
 
                                             </div>
@@ -141,9 +141,9 @@
                                     <div class="minicart__buttons d-flex justify-content-between">
                                         <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();" class="cr-btn">Logout</a>
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
+                                        {{--<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">--}}
+                                            {{--{{ csrf_field() }}--}}
+                                        {{--</form>--}}
                                     </div>
                             </div>
                         </li>

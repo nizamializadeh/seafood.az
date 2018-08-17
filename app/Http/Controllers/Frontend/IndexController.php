@@ -115,4 +115,8 @@ class IndexController extends Controller
         $contact = Contact::first();
         return view('frontend.pages.user-dashboard', compact('contact'));
     }
+
+    public function thankyou(){
+        return view('frontend.pages.thankyou');
+    }
 }

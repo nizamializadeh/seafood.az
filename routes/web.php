@@ -31,6 +31,7 @@ Route::get('/empty', function (){
 Route::delete('/cart/{product}', 'Frontend\CartController@destroy')->name('cart.destroy');
 Route::get('/checkout', 'Frontend\CheckoutController@index');
 Route::post('/postcheckout', 'Frontend\CheckoutController@store');
+Route::get('/thankyou', 'Frontend\IndexController@thankyou');
 Route::get('/lang/{lang}', 'LangController@index');
 Route::get('/contact', 'Frontend\IndexController@contact');
 

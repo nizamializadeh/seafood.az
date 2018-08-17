@@ -2,8 +2,16 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Http\Requests\OrderRequest;
+use App\Order;
+use App\Product;
+use Cartalyst\Stripe\Laravel\Facades\Stripe;
+//use Gloudemans\Shoppingcart\Cart;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Stripe\Charge;
+//use Stripe\Stripe;
 
 class CheckoutController extends Controller
 {
@@ -33,9 +41,24 @@ class CheckoutController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(OrderRequest $request)
     {
-        dd($request->all());
+        $contents = Cart::content()->map(function($item){
+            return $item->model->product_name_az.', '.$item->qty;
+        })->values()->toJson();
+       $order = new Order();
+       $order->first_name = $request->first_name;
+       $order->last_name = $request->last_name;
+       $order->email = $request->email;
+       $order->phone = $request->phone;
+       $order->city = $request->city;
+       $order->street = $request->street_address;
+       $order->product = $contents;
+       $order->total_price =  number_format(Cart::total());
+       $order->status = '1';
+       $order->save();
+       Cart::instance('default')->destroy();
+       return redirect('/thankyou')->with('success_message', 'Your payment has been successfully accepted');
     }
 
     /**
